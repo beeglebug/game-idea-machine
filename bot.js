@@ -1,6 +1,5 @@
 /**
- * twitter bot
- * cron : 0 0,6,12,18 * * * node /home/udlr/main.js tweet
+ * a twitter bot
  */
 var Twit = require('twit');
 var fs  = require('fs');
@@ -65,6 +64,8 @@ function tweet() {
 
 		Twitter.post('statuses/update', { status: status }, function(err, reply) {
 			if(!err) {
+				// add a replacement to the queue
+				queue.push(generateSafe());
 				fs.writeFile(file, queue.join('\n'), function (err) {
 					// error handling?
 				});
