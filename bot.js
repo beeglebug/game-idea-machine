@@ -15,7 +15,7 @@ var Twitter = new Twit({
 });
 
 // debug override
- Twitter.post = function(url, data, callback) { console.log(data.status); callback(); }
+// Twitter.post = function(url, data, callback) { console.log(data.status); callback(); }
 
 var queue, count = 1, type = null;
 
