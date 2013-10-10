@@ -1,0 +1,10 @@
+{
+	"name": "gameideamachine",
+	"description": "A twitter bot for posting game ideas",
+	"repository" : {},
+	"dependencies" : {
+		"handlebars" : "",
+		"indefinite-article" : "",
+		"twit" : ""
+	}
+}
