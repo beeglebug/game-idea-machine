@@ -17,7 +17,6 @@ module.exports = {
 			'sell',
 			'trade',
 			'farm',
-			'',
 			'buy and sell',
 			'deal in',
 			'harvest',
@@ -112,18 +111,22 @@ module.exports = {
 	action : {
 
 		type : [
-			'An on-rails shooter',
-			'An FPS',
-			'A first person game',
-			'A tactical shooter',
-			'A cover based shooter',
-			'A top down shooter',
-			'A shoot em up',
-			'A squad based shooter',
-			'A survival horror game',
-			'A cooperative shooter',
-			'A stealth action game',
-			'A twin stick shooter',
+			'on-rails shooter',
+			'FPS',
+			'first person game',
+			'tactical shooter',
+			'cover based shooter',
+			'top down shooter',
+			'shoot em up',
+			'squad based shooter',
+			'survival horror game',
+			'cooperative shooter',
+			'stealth action game',
+			'twin stick shooter',
+			'beat em-up',
+			'hack n slash',
+			'platformer',
+			'roguelike',
 		],
 
 		attack : [
@@ -161,6 +164,17 @@ module.exports = {
 			'zombie nazis',
 			'goblins',
 			'dragons',
+			'bugs',
+			'insects',
+			'yetis',
+			'wasps',
+			'golems',
+			'elementals',
+			'fairies',
+			'lizardmen',
+			'spiders',
+			'cyborgs',
+			'spies',
 			'ghosts',
 			'vikings',
 			'gangsters',
@@ -216,9 +230,9 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with action}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{/with}}',
-			'{{#with action}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
-			'{{#with action}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{/with}}',
+			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ extra}} {{/with}}',
 		]
 	},
 
@@ -400,6 +414,184 @@ module.exports = {
 			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ loves}} and {{$ does}} {{/with}}',
 			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ hates}} and {{$ does}} {{/with}}',
 		]
+	},
+
+	adventure : {
+
+		type : [
+			'adventure game',
+			'story driven game',
+			'piece of interactive fiction',
+			'RPG',
+			'role playing game',
+			'text adventure',
+			'point and click game',
+			'action RPG',
+		],
+
+		incident : [
+			'meet a stranger',
+			'discover a dark secret',
+			'stumble upon a sinister plot',
+			'witness a murder',
+			'travel back in time',
+			'travel forwards in time',
+			'are involved in an accident',
+			'are injured',
+			'lose everything',
+			'lose your memory',
+			'lose a loved one',
+			'wake up in a strange place',
+			'are kidnapped',
+			'have a bad day',
+			'fall in love',
+			'are given an important task',
+			'must prove yourself',
+		],
+
+		act : [
+			'gather a party',
+			'gather supplies',
+			'craft weapons',
+			'explore the area',
+			'assemble a team',
+			'leave your home town',
+			'train your skills',
+			'gain special powers',
+			'learn amazing new skills',
+			'upgrade your equipment',
+			'assemble an artifact',
+			'piece together clues',
+			'gather evidence',
+			'perform menial chores',
+			'kill monsters',
+			'explore mysterious ruins',
+			'explore a strange place',
+			'experience new emotions',
+			'overcome your fear',
+			'become a warrior',
+			'become the leader',
+			'are put in charge',
+			'collect equipment',
+			'learn all you can',
+			'escape captivity',
+			'go an an epic quest',
+			'go on a long journey',
+			'visit strange new lands',
+			'explore distant lands',
+			'struggle against adversity',
+			'face terrifying foes',
+			'defeat numerous enemies',
+			'vanquish determined enemies',
+		],
+
+		goal : [
+			'gain levels',
+			'get the girl',
+			'find true love',
+			'discover the truth',
+			'redeem yourself',
+			'find forgiveness',
+			'save the day',
+			'become the leader',
+			'to prove yourself',
+			'to impress girls',
+			'undo your mistakes',
+			'reveal the truth',
+			'make up for the past',
+			'disover yourself',
+			'get rich',
+			'look cool',
+			'gain fabulous wealth',
+			'uncover the secrets of your past',
+			'save your family',
+			'take down a corrupt government',
+			'become amazingly wealthy',
+			'escape your past',
+		],
+
+		style : [
+			'gritty',
+			'dark',
+			'hyper realistic',
+			'stylized',
+			'colourful',
+			'adult',
+			'intense',
+			'childish',
+			'noir',
+			'relaxing',
+			'slapstick',
+			'historical',
+			'contemplative',
+			'fast paced',
+			'lonely',
+			'thought provoking',
+			'funny',
+			'sarcastic',
+			'satirical',
+			'scary',
+			'disturbing',
+			'cartoon',
+			'cell shaded',
+			'light hearted',
+			'open world',
+			'cooperative',
+			'multiplayer',
+		],
+
+		templates : [
+			'{{#with adventure}} {{$ type article=true}} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
+			'{{#with adventure}} {{$ type article=true}} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
+			'{{#with adventure}} {{$ style article=true}} {{$ type }} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
+			'{{#with adventure}} {{$ style article=true}} {{$ type }} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
+		]
+
+	},
+/*
+	puzzle : {
+
+		type : [
+			'card game',
+			'puzzle game',
+			'board game',
+			'match-3 game',
+			'party game',
+			'word game',
+			'rythmn action game',
+		]
+
 	}
+
+	indie : {
+
+		feature :  [
+			'rogulike elements'
+			'multiple endings',
+			'difficult moral choices',
+			'persistant elements',
+			'permadeath',
+			'crafting',
+			'procedural content',
+			'user generated content',
+			'a high score table',
+			'motion controls',
+			'touch controls',
+			'local multiplayer',
+			'roguelike elements',
+		],
+
+		restriction : [
+			'a 60 second countdown',
+			'only 1 button',
+			'only 2 buttons',
+			'a limited palette',
+			'only 3 colors',
+			'8 bit graphics',
+			'vector graphics',
+			'16 bit graphics'
+		]
+	}
+*/
 
 };
