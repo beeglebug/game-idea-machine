@@ -3,7 +3,8 @@
  * cron : 0 0,6,12,18 * * * node /home/udlr/main.js tweet
  */
 var Twit = require('twit');
-var fs  = require("fs");
+var fs  = require('fs');
+var path = require('path');
 var IdeaMachine = require('./IdeaMachine.js');
 
 var Twitter = new Twit({
@@ -14,7 +15,7 @@ var Twitter = new Twit({
 });
 
 // debug override
-// Twitter.post = function(url, data, callback) { console.log(data.status); callback(); }
+ Twitter.post = function(url, data, callback) { console.log(data.status); callback(); }
 
 var queue, count = 1, type = null;
 
@@ -51,7 +52,7 @@ function generateSafe(type) {
 
 function tweet() {
 
-	var file = './queue.txt';
+	var file = path.resolve(__dirname, 'queue.txt');
 
 	fs.readFile(file, function(err, contents) {
 
