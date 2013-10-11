@@ -1,5 +1,6 @@
 /**
- * a twitter bot
+ * game idea machine
+ * a twitter bot which tweets random game ideas
  */
 var Twit = require('twit');
 var fs  = require('fs');
@@ -13,34 +14,48 @@ var Twitter = new Twit({
 	access_token_secret: 'SaLEULFiKdMYvxk1MgQwJOZEDGDp5hQOvjHcZl7EX8'
 });
 
-// debug override
-// Twitter.post = function(url, data, callback) { console.log(data.status); callback(); }
+handleArguments();
 
-var queue, count = 1, type = null;
+function handleArguments() {
 
-if(process.argv[2] === 'gen') {
+	var count = 1,
+		type = null;
 
-	if(process.argv[3]) {
-		count = parseInt(process.argv[3]);
+	// generate some stuff
+	if(process.argv[2] === 'gen') {
+
+		// how many?
+		if(process.argv[3]) {
+			count = parseInt(process.argv[3]);
+		}
+
+		// specific type?
+		if(process.argv[4]) {
+			type = 	process.argv[4];
+		}
+
+		// spit them out
+		while(count--) {
+			console.log( generateSafe(type) );
+		}
+
+	// send a tweet
+	} else if (process.argv[2] === 'tweet') {
+
+		tweet();
+
+	// calculate possibilities
+	} else if (process.argv[2] === 'count') {
+
+		IdeaMachine.count();
+
 	}
-
-	if(process.argv[4]) {
-		type = 	process.argv[4];
-	}
-
-	while(count--) {
-		console.log( generateSafe(type) );
-	}
-
-} else if (process.argv[2] === 'tweet') {
-
-	tweet();
-
 }
+
 
 function generateSafe(type) {
 
-	var status = IdeaMachine(type);
+	var status = IdeaMachine.generate(type);
 
 	if(status.length > 140) {
 		status = generateSafe(type);
@@ -63,13 +78,15 @@ function tweet() {
 		}
 
 		Twitter.post('statuses/update', { status: status }, function(err, reply) {
-			if(!err) {
-				// add a replacement to the queue
-				queue.push(generateSafe());
-				fs.writeFile(file, queue.join('\n'), function (err) {
-					// error handling?
-				});
-			}
+			if(err) { return; }
+
+			// drop the empty last element
+			queue.pop();
+
+			// add a replacement to the queue
+			queue.push(generateSafe());
+
+			fs.writeFile(file, queue.join('\n'), function (err) { });
 		});
 	});
 }
