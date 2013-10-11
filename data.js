@@ -110,19 +110,26 @@ module.exports = {
 
 	action : {
 
+		prefix : [
+			'multiplayer',
+			'cooperative',
+			'online',
+			'social',
+			'on-rails',
+			'tactical',
+			'cover based',
+			'top down',
+			'squad based',
+			'twin stick',
+		],
+
 		type : [
-			'on-rails shooter',
 			'FPS',
 			'first person game',
-			'tactical shooter',
-			'cover based shooter',
-			'top down shooter',
+			'shooter',
 			'shoot em up',
-			'squad based shooter',
 			'survival horror game',
-			'cooperative shooter',
 			'stealth action game',
-			'twin stick shooter',
 			'beat em-up',
 			'hack n slash',
 			'platformer',
@@ -188,7 +195,7 @@ module.exports = {
 			'possessed townsfolk',
 			'rogue government agents',
 			'insurgents',
-			'hillbillys',
+			'hillbillies',
 			'devil worshippers'
 		],
 
@@ -230,9 +237,9 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{/with}}',
-			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
-			'{{#with action}} {{$ type article=true}} where you {{$ attack}} {{$ enemies}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
 		]
 	},
 
@@ -297,19 +304,10 @@ module.exports = {
 			'but has massive recoil'
 		],
 
-		ammo : [
-			'bullets',
-			'health',
-			'enemies',
-			'rocks',
-			'batteries',
-		],
-
 		templates : [
 			'{{#with weapon}} A game where you have {{$ type article=true}} that {{$ effect singular=true}} {{$ extra}} {{/with}}',
 			'{{#with weapon}} A game where you have {{$ type article=true}} that shoots {{$ projectiles}} {{/with}}',
 			'{{#with weapon}} A game where you have {{$ type article=true}} that shoots {{$ projectiles}} that {{$ effect}} {{/with}}',
-			'{{#with weapon}} A game where you have {{$ type article=true}} that shoots {{$ projectiles}} and uses {{$ ammo}} as ammo {{/with}}',
 		]
 	},
 
@@ -362,10 +360,27 @@ module.exports = {
 			'famous',
 			'paranoid',
 			'starving',
-			'desperate'
+			'clumsy',
+			'vengeful',
+			'manic',
+			'repressed',
+			'jealous',
+			'muscular',
+			'disguised',
+			'desperate',
+			'illiterate',
+			'sickly',
+			'mean',
+			'miserly',
+			'generous',
+			'vapid',
+			'celebrity',
+			'domineering',
+			'loud',
+			'quiet',
 		],
 
-		loves : [
+		thing : [
 			'to dance',
 			'to sing',
 			'to paint',
@@ -376,9 +391,7 @@ module.exports = {
 			'violence',
 			'pizza',
 			'swimming',
-		],
-
-		hates : [
+			'violence',
 			'social situations',
 			'other people',
 			'robots',
@@ -395,6 +408,7 @@ module.exports = {
 		],
 
 		does : [
+			'get confused easily',
 			'hoards collectables',
 			'avoids conflict',
 			'misses home',
@@ -404,15 +418,24 @@ module.exports = {
 			'has daddy issues',
 			'wears vintage clothes',
 			'listens to jazz music',
-			'plays the guitar'
+			'plays the guitar',
+			'has body image issues',
+			'lacks confidence',
+			'watches too much tv',
+			'enjoys life',
+			'eats too much',
+			'has repressed memories',
+			'has anger issues',
+			'struggles with maths',
+			'longs for a quiet life',
 		],
 
 		templates : [
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ loves}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ hates}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ loves}} but hates {{$ hates}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ loves}} and {{$ does}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ hates}} and {{$ does}} {{/with}}',
+			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} but hates {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} and {{$ does}} {{/with}}',
+			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ thing}} and {{$ does}} {{/with}}',
 		]
 	},
 
