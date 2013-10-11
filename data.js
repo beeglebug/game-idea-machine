@@ -251,6 +251,7 @@ module.exports = {
 			'wield',
 			'carry',
 			'use',
+			'brandish',
 		],
 
 		type : [
@@ -259,11 +260,18 @@ module.exports = {
 			'knife',
 			'pistol',
 			'machine gun',
+			'shotgun',
+			'rifle',
+			'cannon',
+			'bow',
+			'crossbow',
+			'sniper rifle',
+			'assault rifle',
+			'gatling gun',
 			'bazooka',
 			'spear',
 			'shield',
 			'jetpack',
-			'crossbow',
 			'glove',
 			'helmet',
 			'hat',
@@ -280,6 +288,11 @@ module.exports = {
 			'lock on to enemies',
 			'ricochet wildly',
 			'turn enemies to stone',
+			'burn enemies',
+			'entangle enemies',
+			'terrify enemies',
+			'split in two',
+			'liquify enemies',
 			'freeze enemies',
 			'stun enemies',
 			'absorb enemies health',
@@ -316,7 +329,7 @@ module.exports = {
 			'but is useless against some enemies',
 			'and sometimes gets critical hits',
 			'and looks awesome',
-			'but looks dumb',
+			'but looks stupid',
 			'but has massive recoil'
 		],
 
@@ -327,7 +340,6 @@ module.exports = {
 			'fires',
 			'throws',
 			'launches',
-			'blasts',
 			'lobs',
 		],
 
@@ -343,7 +355,6 @@ module.exports = {
 		verb : [
 			'play',
 			'control',
-			'meet',
 			'are',
 		],
 
