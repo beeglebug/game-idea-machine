@@ -30,6 +30,8 @@ function single(phrase) {
 
 	if(word === 'are') {
 		phrase = phrase.replace('are', 'is');
+	} else if (word.slice(-1) === 'y') {
+		phrase = phrase.replace(word, word.slice(0,-1) + 'ies');
 	} else {
 		phrase = phrase.replace(word, word + 's' );
 	}
