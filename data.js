@@ -313,6 +313,13 @@ module.exports = {
 
 	character : {
 
+		verb : [
+			'play',
+			'control',
+			'meet',
+			'are',
+		],
+
 		job : [
 			'space marine',
 			'soldier',
@@ -431,11 +438,11 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} but hates {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who loves {{$ thing}} and {{$ does}} {{/with}}',
-			'{{#with character}} A game where you play {{$ description article=true}} {{$ job}} who hates {{$ thing}} and {{$ does}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who hates {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} but hates {{$ thing}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} and {{$ does}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who hates {{$ thing}} and {{$ does}} {{/with}}',
 		]
 	},
 
