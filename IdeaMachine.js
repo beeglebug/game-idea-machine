@@ -39,6 +39,7 @@ function single(phrase) {
 
 // random array element
 function random(arr) {
+
 	if(!arr.length) {
 		arr = Object.keys(arr);
 	}
@@ -55,7 +56,8 @@ module.exports = function(type) {
 	var templates = [];
 
 	if(!type || !data[type]) {
-		templates = allTemplates;
+		//templates = allTemplates;
+		templates = data[random(data)].templates;
 	} else {
 		templates = data[type].templates;
 	}
