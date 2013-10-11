@@ -245,6 +245,14 @@ module.exports = {
 
 	weapon : {
 
+		have : [
+			'have',
+			'wear',
+			'wield',
+			'carry',
+			'use',
+		],
+
 		type : [
 			'sword',
 			'dagger',
@@ -256,11 +264,12 @@ module.exports = {
 			'shield',
 			'jetpack',
 			'crossbow',
-			'pair of gloves',
+			'glove',
 			'helmet',
 			'hat',
-			'pair of shoes',
-			'familiar',
+			'backpack',
+			'visor',
+			'ring',
 		],
 
 		effect : [
@@ -269,7 +278,10 @@ module.exports = {
 			'explode',
 			'bounce off walls',
 			'lock on to enemies',
+			'ricochet wildly',
 			'turn enemies to stone',
+			'freeze enemies',
+			'stun enemies',
 			'absorb enemies health',
 			'misfire occasionaly',
 		],
@@ -289,7 +301,8 @@ module.exports = {
 			'grenades',
 			'bees',
 			'sharks',
-			'telekinetic energy',
+			'custard pies',
+			'telekinetic blasts',
 		],
 
 		extra : [
@@ -301,13 +314,27 @@ module.exports = {
 			'and has infinite ammo',
 			'and has limited ammo',
 			'but is useless against some enemies',
+			'and sometimes gets critical hits',
+			'and looks awesome',
+			'but looks dumb',
 			'but has massive recoil'
 		],
 
+		verb : [
+			'shoots',
+			'deploys',
+			'emits',
+			'fires',
+			'throws',
+			'launches',
+			'blasts',
+			'lobs',
+		],
+
 		templates : [
-			'{{#with weapon}} A game where you have {{$ type article=true}} that {{$ effect singular=true}} {{$ extra}} {{/with}}',
-			'{{#with weapon}} A game where you have {{$ type article=true}} that shoots {{$ projectiles}} {{/with}}',
-			'{{#with weapon}} A game where you have {{$ type article=true}} that shoots {{$ projectiles}} that {{$ effect}} {{/with}}',
+			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ effect singular=true}} {{$ extra}} {{/with}}',
+			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} {{$ extra}} {{/with}}',
+			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} that {{$ effect}} {{/with}}',
 		]
 	},
 
@@ -571,25 +598,20 @@ module.exports = {
 		]
 
 	},
-/*
-	puzzle : {
-
-		type : [
-			'card game',
-			'puzzle game',
-			'board game',
-			'match-3 game',
-			'party game',
-			'word game',
-			'rythmn action game',
-		]
-
-	}
 
 	indie : {
 
+		type : [
+			'indie platformer',
+			'game jam entry',
+			'IGF entry',
+			'experimental game',
+			'student project',
+			'art house game',
+		],
+
 		feature :  [
-			'rogulike elements'
+			'rogulike elements',
 			'multiple endings',
 			'difficult moral choices',
 			'persistant elements',
@@ -601,7 +623,23 @@ module.exports = {
 			'motion controls',
 			'touch controls',
 			'local multiplayer',
-			'roguelike elements',
+			'a powerful message',
+			'an intriguing story',
+			'difficult choices',
+		],
+
+		issue : [
+			'religion',
+			'politics',
+			'gender',
+			'identity',
+			'self',
+			'existance',
+			'the meaning of life',
+			'love',
+			'loss',
+			'death',
+			'birth',
 		],
 
 		restriction : [
@@ -612,9 +650,14 @@ module.exports = {
 			'only 3 colors',
 			'8 bit graphics',
 			'vector graphics',
-			'16 bit graphics'
+			'16 bit graphics',
+		],
+
+		templates : [
+			'{{#with indie}} {{$ type article=true}} with {{$ feature}}, {{$ feature}} and {{$ restriction}} {{/with}}',
+			'{{#with indie}} {{$ type article=true}} which deals with {{$ issue}} and {{$ issue}} {{/with}}',
 		]
 	}
-*/
+
 
 };
