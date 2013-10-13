@@ -76,7 +76,8 @@ module.exports = {
 		var status = this.generate(type);
 
 		// @user and space afterwards
-		var len = prefix.length + 2;
+		var len = 0;
+		if(prefix) { len = prefix.length + 2; }
 
 		while(status.length > 140 - len) {
 			status = this.generate(type);

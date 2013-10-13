@@ -117,7 +117,6 @@ function tweet() {
 		}
 
 		Twitter.post('statuses/update', { status: status }, function(err, reply) {
-			if(err) { return; }
 
 			// drop the empty last element
 			queue.pop();
@@ -126,6 +125,9 @@ function tweet() {
 			queue.push(IdeaMachine.generateSafe());
 
 			fs.writeFile(file, queue.join('\n'), function (err) { });
+
+			if(err) { console.log(err); }
+
 		});
 	});
 }
