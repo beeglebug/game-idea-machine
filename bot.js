@@ -8,12 +8,7 @@ var path = require('path');
 var IdeaMachine = require('./IdeaMachine.js');
 var secrets = require('./secrets.js');
 
-var Twitter = new Twit({
-	consumer_key: '65FCELLR6C4aC4X6SeXCeA',
-	consumer_secret: secrets.consumer,
-	access_token: '1927106185-UdNmx2XJe29FsolQCVP7E7lQuGfr6kvUvGqax5e',
-	access_token_secret: secrets.token
-});
+var Twitter = new Twit(secrets);
 
 handleArguments();
 
