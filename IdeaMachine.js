@@ -60,7 +60,6 @@ module.exports = {
 		var templates = [];
 
 		if(!type || !data[type]) {
-			//templates = allTemplates;
 			templates = data[random(data)].templates;
 		} else {
 			templates = data[type].templates;
@@ -70,6 +69,20 @@ module.exports = {
 
 		return capitaliseFirstLetter( Handlebars.compile(template)(data).trim() );
 
+	},
+
+	generateSafe : function(type, prefix) {
+
+		var status = this.generate(type);
+
+		// @user and space afterwards
+		var len = prefix.length + 2;
+
+		while(status.length > 140 - len) {
+			status = this.generate(type);
+		}
+
+		return status;
 	},
 
 	count : function() {
