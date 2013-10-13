@@ -277,7 +277,7 @@ module.exports = {
 			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
 		]
 	},
-
+/*
 	setting : {
 
 		location : [
@@ -294,7 +294,7 @@ module.exports = {
 			'{{#with setting}} A game set {{$ location}} {{$ feature}} {{/with}}',
 		]
 	},
-
+*/
 	weapon : {
 
 		have : [
@@ -773,9 +773,9 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with mashup}} Kind of like {{$ game}} mixed with {{$ game}}, but set in the world of {{$ game}} {{/with}}',
-			'{{#with mashup}} Kind of like {{$ game}} mixed with {{$ game}}, but in the style of {{$ game}} {{/with}}',
-			'{{#with mashup}} Kind of like {{$ game}} mixed with {{$ game}}, but it plays like {{$ game}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but set in the world of {{$ game}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but in the style of {{$ game}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but it plays like {{$ game}} {{/with}}',
 			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but set in the world of {{$ game}} {{/with}}',
 			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but in the style of {{$ game}} {{/with}}',
 			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but it plays like {{$ game}} {{/with}}',
