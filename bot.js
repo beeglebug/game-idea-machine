@@ -45,12 +45,6 @@ function handleArguments() {
 			tweet();
 			break;
 
-		// calculate possibilities
-		case 'count':
-
-			IdeaMachine.count();
-			break;
-
 		// listen for commands
 		case 'monitor':
 

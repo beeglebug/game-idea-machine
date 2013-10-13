@@ -84,33 +84,5 @@ module.exports = {
 		}
 
 		return status;
-	},
-
-	count : function() {
-
-		console.log( Object.keys(data).length + ' types' );
-		console.log( allTemplates.length + ' templates' );
-
-		var grandTotal = 0;
-
-		allTemplates.forEach(function(template) {
-			var tags = template.match(/{{.+?}}/g);
-			tags = tags.map(function(text){
-				return text.replace('{{$','').replace('{{#','').replace('{{/','').replace('}}','').replace('article=true','').replace('singular=true','').trim();
-			});
-			tags.pop();
-			var scope = tags.shift().replace('with ','');
-			var total = data[scope][tags.shift()].length;
-			tags.forEach(function(tag){
-				var options = data[scope][tag].length;
-				total *= options;
-			});
-			grandTotal += total;
-		});
-
-		console.log(grandTotal + ' possibilities');
-		console.log( Math.floor(grandTotal / 6 / 365) + ' years worth at 6 per day');
-
 	}
-
 };
