@@ -182,6 +182,18 @@ module.exports = {
 			'devour the souls of',
 		],
 
+		enemy_type : [
+			'cyborg',
+			'robot',
+			'mutated',
+			'radioactive',
+			'evil',
+			'rabid',
+			'diseased',
+			'rogue',
+			'possessed',
+		],
+
 		enemies : [
 			'nazis',
 			'zombies',
@@ -201,11 +213,10 @@ module.exports = {
 			'fairies',
 			'lizardmen',
 			'spiders',
-			'cyborgs',
 			'spies',
+			'government agents',
 			'skeletons',
 			'ghosts',
-			'reanimated corpses',
 			'vampires',
 			'werewolves',
 			'vikings',
@@ -216,14 +227,12 @@ module.exports = {
 			'demons',
 			'devils',
 			'cultists',
-			'tentacled horrors',
+			'horrors',
 			'blobs of ooze',
-			'evil corporations',
-			'mutated creatures',
-			'rabid animals',
+			'animals',
 			'nightmare creatures from beyond our universe',
-			'possessed townsfolk',
-			'rogue government agents',
+			'townsfolk',
+			'villagers',
 			'insurgents',
 			'hillbillies',
 			'devil worshippers'
@@ -260,7 +269,7 @@ module.exports = {
 			'and get cash for each kill',
 			'and you are invincible',
 			'and you are invisible',
-			'and your friend betrays you at the end',
+			'and you get betrayed you at the end',
 			'and you can rewind time',
 			'and you can slow down time',
 			'and you can control gravity',
@@ -269,32 +278,70 @@ module.exports = {
 			'but it is all a dream',
 			'but it is all a simulation',
 			'but you die in one hit',
+			/* add more here */
 		],
 
 		templates : [
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{/with}}',
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ extra}} {{/with}}',
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ modifier}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ extra}} {{/with}}',
+			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
 		]
 	},
-/*
+
 	setting : {
 
-		location : [
-			'in a hospital',
-			'on a military base',
+		in_location : [
+			'hospital',
+			'city',
+			'town',
+			'village',
+			'cavern',
+			'office',
+			'testing facility',
+			'combat arena',
+			'jungle',
+			'desert',
+			'sewer',
+			'cave system',
+			'warzone',
 		],
 
-		feature : [
-			'with flickering lights',
-			'which is partially flooded',
+		on_location : [
+			'military base',
+			'submarine',
+			'floating city',
+			'aeroplane',
+			'cruise ship',
+			'train',
+			'spaceship',
+			'moon base',
+			'space station',
+		],
+
+		description : [
+			'desolate',
+			'spooky',
+			'abandoned',
+			'flooded',
+			'dimly lit',
+			'toxic',
+			'militarized',
+			'run of the mill',
+			'destroyed',
+			'ruined',
+			'haunted',
+			'futuristic',
+			'steampunk',
+			'overrun',
+			'hostile',
 		],
 
 		templates : [
-			'{{#with setting}} A game set {{$ location}} {{$ feature}} {{/with}}',
+			'{{#with setting}} A game set in {{$ description article=true}} {{$ in_location}} full of {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
+			'{{#with setting}} A game set on {{$ description article=true}} {{$ on_location}} full of {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
 		]
 	},
-*/
+
 	weapon : {
 
 		have : [
