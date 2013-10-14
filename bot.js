@@ -7,6 +7,7 @@ var fs  = require('fs');
 var path = require('path');
 var IdeaMachine = require('./IdeaMachine.js');
 var secrets = require('./secrets.js');
+var data = require('./data.js');
 
 var Twitter = new Twit(secrets);
 
@@ -54,20 +55,6 @@ function handleArguments() {
 	}
 }
 
-var commands = {
-
-	status : function(tweet) {
-
-		reply(tweet, 'ok');
-
-	},
-
-	idea : function(tweet) {
-		reply(tweet, IdeaMachine.generateSafe(null, tweet.user.screen_name));
-	}
-
-};
-
 function monitor() {
 
 	var stream = Twitter.stream('user');
@@ -77,9 +64,13 @@ function monitor() {
 		var message = tweet.text;
 		var command = message.replace('@gameideamachine','').trim();
 
-		if(!commands[command]) { return; }
-
-		commands[command](tweet);
+		if(command === 'idea') {
+			reply(tweet, IdeaMachine.generateSafe(null, tweet.user.screen_name));
+		} else if(data[command]) {
+			reply(tweet, IdeaMachine.generateSafe(command, tweet.user.screen_name));
+		} else {
+			return;
+		}
 
 	});
 
