@@ -19,6 +19,9 @@ Handlebars.registerHelper('$', function(data, options) {
 		if(options.hash.singular) {
 			item = single(item);
 		}
+		if(options.hash.capital) {
+			item = capitaliseFirstLetter(item);
+		}
 	}
 
 	return item;

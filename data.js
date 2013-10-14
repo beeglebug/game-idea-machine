@@ -191,13 +191,14 @@ module.exports = {
 			'rabid',
 			'diseased',
 			'rogue',
+			'zombie',
 			'possessed',
+			'',
 		],
 
 		enemies : [
 			'nazis',
 			'zombies',
-			'zombie nazis',
 			'goblins',
 			'dragons',
 			'bugs',
@@ -377,6 +378,8 @@ module.exports = {
 			'backpack',
 			'visor',
 			'ring',
+			'boomerang',
+			'frisbee',
 		],
 
 		effect : [
@@ -532,14 +535,29 @@ module.exports = {
 			'to sing',
 			'to paint',
 			'fruit',
+			'chocolate',
+			'cheese',
+			'fast food',
+			'pizza',
+			'computers',
+			'music',
+			'sports',
+			'cars',
+			'TV',
+			'work',
 			'money',
 			'killing things',
 			'running',
 			'violence',
-			'pizza',
 			'swimming',
 			'violence',
 			'social situations',
+			'to be alone',
+			'heights',
+			'small spaces',
+			'open spaces',
+			'the country',
+			'the city',
 			'other people',
 			'robots',
 			'violence',
@@ -561,7 +579,6 @@ module.exports = {
 			'misses home',
 			'wants to go home',
 			'is afraid of the dark',
-			'is afraid of cats',
 			'has daddy issues',
 			'wears vintage clothes',
 			'listens to jazz music',
@@ -583,6 +600,9 @@ module.exports = {
 			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} but hates {{$ thing}} {{/with}}',
 			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} and {{$ does}} {{/with}}',
 			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who hates {{$ thing}} and {{$ does}} {{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who is afraid of {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who has spent years fighting {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
+			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who is fleeing {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
 		]
 	},
 
@@ -836,6 +856,7 @@ module.exports = {
 			'open beta',
 			'crowd funded',
 			'though provoking',
+			'high concept',
 			'tongue in cheek',
 			'straight faced',
 			'critically acclaimed',
@@ -846,6 +867,7 @@ module.exports = {
 			'bug filled',
 			'heavily hyped',
 			'over hyped',
+			'misunderstood'
 		],
 
 		type : [
@@ -872,6 +894,8 @@ module.exports = {
 			'episodic content',
 			'weekly updates',
 			'a developer diary',
+			'a twitter account',
+			'randomization',
 			'procedural content',
 			'user generated content',
 			'a high score table',
@@ -881,6 +905,9 @@ module.exports = {
 			'a powerful message',
 			'an intriguing story',
 			'difficult choices',
+			'disturbing subtext',
+			'easter eggs',
+			'a cloth map',
 		],
 
 		issue : [
@@ -923,6 +950,4 @@ module.exports = {
 			'{{#with indie}} {{$ description article=true}} {{$ type}} dealing with issues of {{$ issue}} and {{$ issue}} {{/with}}',
 		]
 	}
-
-
 };
