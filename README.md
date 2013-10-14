@@ -15,5 +15,5 @@ Will reply with an idea if you tweet "@gameideamachine [command]", where [comman
 * __setting__ - an idea focused on the setting
 * __character__ - a game based on a particular character
 
-Comments and suggestions can be tweeted to [@gameideamachine](http://twitter.com/gameideamachine)
+Comments and suggestions should be tweeted to [@beeglebug](http://twitter.com/beeglebug)
 
