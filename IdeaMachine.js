@@ -70,7 +70,7 @@ module.exports = {
 
 		var template = random(templates);
 
-		return capitaliseFirstLetter( Handlebars.compile(template)(data).trim() );
+		return capitaliseFirstLetter( Handlebars.compile(template)(data).trim().replace(/ +(?= )/g,'') );
 
 	},
 
