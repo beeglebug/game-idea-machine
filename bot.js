@@ -62,7 +62,7 @@ function monitor() {
 	stream.on('tweet', function (tweet) {
 
 		var message = tweet.text;
-		var command = message.replace('@gameideamachine','').trim();
+		var command = message.replace('@gameideamachine','').trim().toLowerCase();
 
 		if(command === 'idea') {
 			reply(tweet, IdeaMachine.generateSafe(null, tweet.user.screen_name));
