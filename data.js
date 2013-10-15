@@ -895,7 +895,7 @@ module.exports = {
 		description : [
 			'open beta',
 			'crowd funded',
-			'though provoking',
+			'thought provoking',
 			'high concept',
 			'tongue in cheek',
 			'straight faced',
