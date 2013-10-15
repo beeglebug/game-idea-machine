@@ -14,6 +14,7 @@ Will reply with an idea if you tweet "@gameideamachine [command]", where [comman
 * __weapon__ - an idea centered around a weapon of some sort
 * __setting__ - an idea focused on the setting
 * __character__ - a game based on a particular character
+* __racing__ - a racing game
 
 Comments and suggestions should be tweeted to [@beeglebug](http://twitter.com/beeglebug)
 
