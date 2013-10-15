@@ -309,6 +309,12 @@ module.exports = {
 
 		in_location : [
 			'hospital',
+			'garden',
+			'house',
+			'street',
+			'farm',
+			'car park',
+			'mall',
 			'city',
 			'town',
 			'village',
@@ -317,10 +323,15 @@ module.exports = {
 			'testing facility',
 			'combat arena',
 			'jungle',
+			'mine',
+			'quarry',
+			'battlefield',
 			'desert',
 			'sewer',
+			'warehouse',
+			'cavern',
 			'cave system',
-			'warzone',
+			'war zone',
 		],
 
 		on_location : [
@@ -330,18 +341,25 @@ module.exports = {
 			'aeroplane',
 			'cruise ship',
 			'train',
+			'beach',
+			'mountain',
 			'spaceship',
 			'moon base',
 			'space station',
 		],
 
 		description : [
+			'',
 			'desolate',
 			'spooky',
 			'abandoned',
 			'flooded',
 			'dimly lit',
 			'toxic',
+			'radioactive',
+			'war torn',
+			'average',
+			'boring',
 			'militarized',
 			'run of the mill',
 			'destroyed',
@@ -349,13 +367,20 @@ module.exports = {
 			'haunted',
 			'futuristic',
 			'steampunk',
-			'overrun',
 			'hostile',
 		],
 
+		full : [
+			'full of',
+			'infested with',
+			'overrun by',
+			'home to',
+		],
+
 		templates : [
-			'{{#with setting}} A game set in {{$ description article=true}} {{$ in_location}} full of {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
-			'{{#with setting}} A game set on {{$ description article=true}} {{$ on_location}} full of {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
+			'{{#with setting}} A game set in {{$ description article=true}} {{$ in_location}} {{$ full}} {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
+			'{{#with setting}} A game set on {{$ description article=true}} {{$ on_location}} {{$ full}} {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
+			// location in location
 		]
 	},
 
@@ -379,6 +404,10 @@ module.exports = {
 			'shotgun',
 			'rifle',
 			'cannon',
+			'chainsaw',
+			'katana',
+			'staff',
+			'halberd',
 			'bow',
 			'crossbow',
 			'sniper rifle',
@@ -410,11 +439,13 @@ module.exports = {
 			'entangle enemies',
 			'terrify enemies',
 			'split in two',
+			'glow eerily',
+			'sparkle',
+			'move randomly',
 			'liquify enemies',
 			'freeze enemies',
 			'stun enemies',
 			'absorb enemies health',
-			'misfire occasionaly',
 		],
 
 		projectiles : [
@@ -443,6 +474,9 @@ module.exports = {
 			'but using it costs you health',
 			'and deals splash damage',
 			'and can be upgraded',
+			'and talks to you',
+			'and has an annoying AI',
+			'and misfires occasionaly',
 			'and has infinite ammo',
 			'and has limited ammo',
 			'but is useless against some enemies',
@@ -467,6 +501,8 @@ module.exports = {
 		templates : [
 			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ effect singular=true}} {{$ extra}} {{/with}}',
 			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} {{$ extra}} {{/with}}',
+			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that is also {{$ type article=true}} {{$ extra}} {{/with}}',
+			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} attached to a {{$ type article=true}} {{$ extra}} {{/with}}',
 			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} that {{$ effect}} {{/with}}',
 		]
 	},
@@ -667,7 +703,7 @@ module.exports = {
 			'leave your home town',
 			'train your skills',
 			'gain special powers',
-			'learn amazing new skills',
+			'learn new skills',
 			'upgrade your equipment',
 			'assemble an artifact',
 			'piece together clues',
@@ -680,6 +716,7 @@ module.exports = {
 			'overcome your fear',
 			'become a warrior',
 			'become the leader',
+			'gain respect',
 			'are put in charge',
 			'collect equipment',
 			'learn all you can',
@@ -710,6 +747,7 @@ module.exports = {
 			'impress girls',
 			'undo your mistakes',
 			'reveal the truth',
+			'fulfil an ancient prophecy',
 			'make up for the past',
 			'disover yourself',
 			'get rich',
@@ -861,7 +899,7 @@ module.exports = {
 			'Wii Sports',
 		],
 
-		third_compare : [
+		compare : [
 			'in the style of',
 			'in the world of',
 			'it feels more like',
@@ -883,9 +921,10 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ third_compare}} {{$ game}} {{/with}}',
-			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ third_compare}} {{$ game}} {{/with}}',
-			'{{#with mashup}} A bit like {{$ game}} mixed with {{$ game}}, but {{$ extra}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ compare}} {{$ game}} {{/with}}',
+			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ compare}} {{$ game}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ compare}} {{$ game}} only {{$ extra}} {{/with}}',
+			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ compare}} {{$ game}} only {{$ extra}} {{/with}}',
 		]
 
 	},
@@ -907,7 +946,12 @@ module.exports = {
 			'bug filled',
 			'heavily hyped',
 			'over hyped',
-			'misunderstood'
+			'misunderstood',
+			'post modern',
+			'bohemian',
+			'hipster',
+			'cutting edge',
+			'bleeding edge',
 		],
 
 		type : [
@@ -915,6 +959,7 @@ module.exports = {
 			'game jam entry',
 			'IGF entry',
 			'experimental game',
+			'tech demo',
 			'student project',
 			'sandbox game',
 			'art house game',
@@ -988,6 +1033,91 @@ module.exports = {
 		templates : [
 			'{{#with indie}} {{$ description article=true}} {{$ type}} with {{$ feature}}, {{$ feature}} and {{$ restriction}} {{/with}}',
 			'{{#with indie}} {{$ description article=true}} {{$ type}} dealing with issues of {{$ issue}} and {{$ issue}} {{/with}}',
+		]
+	},
+
+	racing : {
+
+		prefix : [
+			'delapidated',
+			'shiny new',
+			'battle damaged',
+			'corporate sponsored',
+			'steampunk',
+			'futuristic',
+			'colorful',
+			'cartoony',
+			'modified',
+			'customizable',
+			'fragile',
+			'speedy',
+			'sluggish',
+		],
+
+		type : [
+			'rally cars',
+			'sports cars',
+			'F1 cars',
+			'karts',
+			'SUVs',
+			'trucks',
+			'motorbikes',
+			'motocross bikes',
+			'mountain bikes',
+			'tricycles',
+			'hovercraft',
+			'row boats',
+			'boats',
+			'canoes',
+			'jetskis',
+			'planes',
+			'rockets',
+			'spaceships',
+			'hovercars',
+			'flying saucers',
+			'helicopters',
+			'hang gliders',
+			'jet packs',
+			'unicycles',
+			'segways',
+		],
+
+		animal : [
+			'horses',
+			'camels',
+			'elephants',
+			'dolphins',
+			'eagles',
+			'mice',
+		],
+
+		extra : [
+			'and fire weapons',
+			'and use powerups',
+			'and hit boost pads',
+			'and do stunts',
+			'and collect pickups',
+			'against the clock',
+			'against your best time',
+			'against your friends',
+			'in an open world'
+		],
+		around : [
+			'around',
+			'through',
+			'about in',
+		],
+		control : [
+			'race',
+			'zoom',
+			'hurtle',
+		],
+		templates : [
+			'{{#with racing}} A racing game where you ride {{$ prefix}} {{$ animal}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}}',
+			'{{#with racing}} A game where you race {{$ prefix}} {{$ type}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}}',
+			'{{#with racing}} A racing game where you {{$ control}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} in {{#with racing}}{{$ prefix}} {{$ type}}{{/with}}',
+			'{{#with racing}} A game where you race {{$ prefix}} {{$ type}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} {{#with racing}}{{$ extra}}{{/with}}',
+			'{{#with racing}} A racing game where you {{$ control}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} in {{#with racing}}{{$ prefix}} {{$ type}} {{$ extra}}{{/with}}',
 		]
 	}
 };
