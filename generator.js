@@ -17,7 +17,7 @@ Handlebars.registerHelper('$', function(data, options) {
 			item = getArticle(item) + ' ' + item;
 		}
 		if(options.hash.singular) {
-			item = single(item);
+			item = singularVerb(item);
 		}
 		if(options.hash.capital) {
 			item = capitaliseFirstLetter(item);
@@ -27,7 +27,11 @@ Handlebars.registerHelper('$', function(data, options) {
 	return item;
 });
 
-function single(phrase) {
+
+/**
+ * convert a word (or first word of a phrase) into singular verb form
+ */
+function singularVerb(phrase) {
 
 	var word = /\w+/.exec(phrase)[0];
 
@@ -42,7 +46,11 @@ function single(phrase) {
 	return phrase;
 }
 
-// random array element
+
+/**
+ * return a random element from an array
+ * or random key from an object
+ */
 function random(arr) {
 
 	if(!arr.length) {
@@ -51,6 +59,9 @@ function random(arr) {
 	return arr[Math.floor(Math.random() * arr.length)];
 }
 
+/**
+ * capitalise the first letter of a string
+ */
 function capitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -58,22 +69,31 @@ function capitaliseFirstLetter(string)
 
 module.exports = {
 
+	/**
+	 * generate a random game idea
+	 */
 	generate : function(type) {
 
-		var templates = [];
-
 		if(!type || !data[type]) {
-			templates = data[random(data)].templates;
-		} else {
-			templates = data[type].templates;
+			type = random(data);
 		}
 
+		var templates = data[type].templates;
 		var template = random(templates);
+		var compiled = Handlebars.compile(template);
+		var rendered = compiled(data);
 
-		return capitaliseFirstLetter( Handlebars.compile(template)(data).trim().replace(/ +(?= )/g,'') );
+		// get rid of multiple, leading and trailing spaces
+		rendered = rendered.replace(/ +(?= )/g,'').trim();
 
+		return capitaliseFirstLetter( rendered );
 	},
 
+	/**
+	 * generate a twitter safe idea (<140 chars)
+	 * can be passed a prefix (usualy a name, for replies)
+	 * and it takes that into account
+	 */
 	generateSafe : function(type, prefix) {
 
 		var status = this.generate(type);

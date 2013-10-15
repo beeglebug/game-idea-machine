@@ -5,7 +5,7 @@
 var Twit = require('twit');
 var fs  = require('fs');
 var path = require('path');
-var IdeaMachine = require('./IdeaMachine.js');
+var generator = require('./generator.js');
 var secrets = require('./secrets.js');
 var data = require('./data.js');
 
@@ -13,6 +13,9 @@ var Twitter = new Twit(secrets);
 
 handleArguments();
 
+/**
+ * decide what to do based on what commands were passed in
+ */
 function handleArguments() {
 
 	var count = 1,
@@ -35,7 +38,7 @@ function handleArguments() {
 
 			// spit them out
 			while(count--) {
-				console.log( IdeaMachine.generateSafe(type) );
+				console.log( generator.generateSafe(type) );
 			}
 
 			break;
@@ -55,6 +58,10 @@ function handleArguments() {
 	}
 }
 
+/**
+ * watch the gameideamachine user stream
+ * look for tweets at it
+ */
 function monitor() {
 
 	var stream = Twitter.stream('user');
@@ -65,23 +72,25 @@ function monitor() {
 		var command = message.replace('@gameideamachine','').trim().toLowerCase();
 
 		if(command === 'idea') {
-			reply(tweet, IdeaMachine.generateSafe(null, tweet.user.screen_name));
+			reply(tweet, generator.generateSafe(null, tweet.user.screen_name));
 		} else if(data[command]) {
-			reply(tweet, IdeaMachine.generateSafe(command, tweet.user.screen_name));
+			reply(tweet, generator.generateSafe(command, tweet.user.screen_name));
 		} else {
+			// unknown request- log somewhere?
 			return;
 		}
 
 	});
-
 }
 
 function reply(tweet, message) {
 
 	var status = '@' + tweet.user.screen_name + ' ' + message;
 
-	Twitter.post('statuses/update', { status: status, in_reply_to_status_id : tweet.id_str }, function(err, reply) {	});
-
+	Twitter.post('statuses/update', {
+		status: status,
+		in_reply_to_status_id : tweet.id_str
+	}, function(err, reply) {});
 }
 
 function tweet() {
@@ -94,7 +103,7 @@ function tweet() {
 		var status = queue.shift();
 
 		if(!status) {
-			status = IdeaMachine.generateSafe();
+			status = generator.generateSafe();
 		}
 
 		Twitter.post('statuses/update', { status: status }, function(err, reply) {
@@ -103,7 +112,7 @@ function tweet() {
 			queue.pop();
 
 			// add a replacement to the queue
-			queue.push(IdeaMachine.generateSafe());
+			queue.push(generator.generateSafe());
 
 			fs.writeFile(file, queue.join('\n'), function (err) { });
 
