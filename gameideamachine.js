@@ -1,6 +1,7 @@
 /**
- * game idea machine
+ * Game Idea Machine
  * a twitter bot which tweets random game ideas
+ * this file is the wrapper around the generator, and handles all the twitter related stuff
  */
 var Twit = require('twit');
 var fs  = require('fs');

@@ -1,3 +1,7 @@
+/**
+ * the game idea generator
+ * picks a random handlebars template, then compiles it using random words
+ */
 var Handlebars = require('handlebars');
 var getArticle = require('indefinite-article');
 var data = require('./data.js');

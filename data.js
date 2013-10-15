@@ -1,3 +1,6 @@
+/**
+ * the raw data used to generate game ideas
+ */
 module.exports = {
 
 	sim : {
