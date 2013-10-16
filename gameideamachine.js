@@ -109,8 +109,8 @@ function tweet() {
 
 		Twitter.post('statuses/update', { status: status }, function(err, reply) {
 
-			// drop the empty last element
-			queue.pop();
+			// drop any empty elements
+			queue = queue.filter(function(e){ return e; });
 
 			// add a replacement to the queue
 			queue.push(generator.generateSafe());
