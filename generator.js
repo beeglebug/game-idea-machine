@@ -18,6 +18,7 @@ Handlebars.registerHelper('$', function(data, options) {
 
 	if(options && options.hash) {
 		if(options.hash.article) {
+			if(item == '') { return 'A'; }
 			item = getArticle(item) + ' ' + item;
 		}
 		if(options.hash.singular) {
