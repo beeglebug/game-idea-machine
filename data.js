@@ -1148,7 +1148,6 @@ module.exports = {
 			'slice',
 			'draw',
 			'touch',
-			'multi-touch',
 			'reverse pinch',
 			'match',
 		],
@@ -1169,6 +1168,7 @@ module.exports = {
 			'QR codes',
 			'strangers',
 			'birds',
+			'jewels',
 			'maps',
 			'coins',
 			'pigs',
@@ -1188,6 +1188,7 @@ module.exports = {
 			'doodles',
 			'cookies',
 			'farm animals',
+			'animals',
 			'fruit',
 		],
 		extra : [
