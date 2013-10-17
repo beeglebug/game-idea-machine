@@ -6,6 +6,7 @@
 var Twit = require('twit');
 var fs  = require('fs');
 var path = require('path');
+var util = require('util');
 var generator = require('./generator.js');
 var secrets = require('./secrets.js');
 var data = require('./data.js');
@@ -39,7 +40,7 @@ function handleArguments() {
 
 			// spit them out
 			while(count--) {
-				console.log( generator.generateSafe(type) );
+				util.log( generator.generateSafe(type) );
 			}
 
 			break;
@@ -77,7 +78,7 @@ function monitor() {
 		} else if(data[command]) {
 			reply(tweet, generator.generateSafe(command, tweet.user.screen_name));
 		} else {
-			// unknown request- log somewhere?
+			util.log('unknown command', command);
 			return;
 		}
 
@@ -91,7 +92,10 @@ function reply(tweet, message) {
 	Twitter.post('statuses/update', {
 		status: status,
 		in_reply_to_status_id : tweet.id_str
-	}, function(err, reply) {});
+	}, function(err, reply) {
+		if(err) { util.log(err); }
+		else { util.log('reply sent to', tweet.user.screen_name); }
+	});
 }
 
 function tweet() {
@@ -117,7 +121,8 @@ function tweet() {
 
 			fs.writeFile(file, queue.join('\n'), function (err) { });
 
-			if(err) { console.log(err); }
+			if(err) { util.log(err); }
+			else { util.log('tweet sent'); }
 
 		});
 	});
