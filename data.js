@@ -976,8 +976,8 @@ module.exports = {
 		templates : [
 			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ compare}} {{$ game}} {{/with}}',
 			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ compare}} {{$ game}} {{/with}}',
-			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ compare}} {{$ game}} only {{$ extra}} {{/with}}',
-			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ compare}} {{$ game}} only {{$ extra}} {{/with}}',
+			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ compare}} {{$ game}} and {{$ extra}} {{/with}}',
+			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ compare}} {{$ game}} and {{$ extra}} {{/with}}',
 		]
 
 	},
