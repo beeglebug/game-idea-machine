@@ -1139,7 +1139,7 @@ module.exports = {
 			'{{#with racing}} A racing game where you {{$ control}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} in {{#with racing}}{{$ prefix}} {{$ type}} {{$ extra}}{{/with}}',
 		]
 	},
-
+/*
 	mobile : {
 
 		input : [
@@ -1230,5 +1230,5 @@ module.exports = {
 			'{{#with mobile}} A mobile game where you {{$ input}} {{$ subject}}, {{$ input}} {{$ subject}} and {{$ extra}} {{/with}}',
 		]
 	}
-
+*/
 };
