@@ -71,6 +71,10 @@ function monitor() {
 	stream.on('tweet', function (tweet) {
 
 		var message = tweet.text;
+
+		// ignore own tweets
+		if(tweet.user.screen_name == 'gameideamachine') { return; }
+
 		var command = message.replace('@gameideamachine','').trim().toLowerCase();
 
 		if(command === 'idea') {
