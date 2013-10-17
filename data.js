@@ -1189,8 +1189,12 @@ module.exports = {
 		type : [
 			'colorful',
 			'cartoony',
-			'serious',
+			'realistic',
+			'stylized',
 			'minimalistic',
+			'serious',
+			'comical',
+			'light hearted',
 			'complex',
 			'sponsored',
 			'pay to play',
