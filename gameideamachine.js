@@ -78,7 +78,7 @@ function monitor() {
 		} else if(data[command]) {
 			reply(tweet, generator.generateSafe(command, tweet.user.screen_name));
 		} else {
-			util.log('unknown command', command);
+			util.log('unknown command ' + String(command) );
 			return;
 		}
 
@@ -94,7 +94,7 @@ function reply(tweet, message) {
 		in_reply_to_status_id : tweet.id_str
 	}, function(err, reply) {
 		if(err) { util.log(err); }
-		else { util.log('reply sent to', tweet.user.screen_name); }
+		else { util.log('reply sent to ' + tweet.user.screen_name); }
 	});
 }
 
@@ -122,7 +122,7 @@ function tweet() {
 			fs.writeFile(file, queue.join('\n'), function (err) { });
 
 			if(err) { util.log(err); }
-			else { util.log('tweet sent'); }
+			else { util.log('scheduled tweet sent'); }
 
 		});
 	});
