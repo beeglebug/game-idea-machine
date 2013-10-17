@@ -75,6 +75,9 @@ function monitor() {
 		// ignore own tweets
 		if(tweet.user.screen_name == 'gameideamachine') { return; }
 
+		// ignore everything other than "@gameidemachine command" (for now)
+		if(message.indexOf('@gameideamachine') !== 0) { return; }
+
 		var command = message.replace('@gameideamachine','').trim().toLowerCase();
 
 		if(command === 'idea') {
