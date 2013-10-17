@@ -40,7 +40,7 @@ function handleArguments() {
 
 			// spit them out
 			while(count--) {
-				util.log( generator.generateSafe(type) );
+				console.log( generator.generateSafe(type) );
 			}
 
 			break;
