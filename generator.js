@@ -32,6 +32,41 @@ Handlebars.registerHelper('$', function(data, options) {
 	return item;
 });
 
+// 2 random tags
+Handlebars.registerHelper('$x2', function(data, options) {
+
+	var item1, item2;
+
+	item1 = random(data);
+	item2 = random(data);
+
+	while(item2 == item1) {
+		item2 = random(data);
+	}
+
+	return item1 + ' and ' + item2;
+});
+
+// 3 random tags
+Handlebars.registerHelper('$x3', function(data, options) {
+
+	var item1, item2, item3;
+
+	item1 = random(data);
+	item2 = random(data);
+	item3 = random(data);
+
+	while(item2 == item1) {
+		item2 = random(data);
+	}
+
+	while(item3 == item1 || item3 == item2) {
+		item3 = random(data);
+	}
+
+
+	return item1 + ', ' + item2 + ' and ' + item3;
+});
 
 /**
  * convert a word (or first word of a phrase) into singular verb form
