@@ -728,6 +728,37 @@ module.exports = {
 
 	adventure : {
 
+		style : [
+			'gritty',
+			'dark',
+			'hyper realistic',
+			'stylized',
+			'colourful',
+			'adult',
+			'intense',
+			'childish',
+			'noir',
+			'relaxing',
+			'slapstick',
+			'historical',
+			'contemplative',
+			'fast paced',
+			'lonely',
+			'thought provoking',
+			'funny',
+			'sarcastic',
+			'heart warming',
+			'satirical',
+			'scary',
+			'disturbing',
+			'cartoon',
+			'cell shaded',
+			'light hearted',
+			'open world',
+			'cooperative',
+			'multiplayer',
+		],
+
 		type : [
 			'adventure game',
 			'story driven game',
@@ -801,7 +832,6 @@ module.exports = {
 			'gain levels',
 			'get the girl',
 			'get drunk',
-			'get laid',
 			'get your job back',
 			'find true love',
 			'discover the truth',
@@ -824,37 +854,6 @@ module.exports = {
 			'take down a corrupt government',
 			'become amazingly wealthy',
 			'escape your past',
-		],
-
-		style : [
-			'gritty',
-			'dark',
-			'hyper realistic',
-			'stylized',
-			'colourful',
-			'adult',
-			'intense',
-			'childish',
-			'noir',
-			'relaxing',
-			'slapstick',
-			'historical',
-			'contemplative',
-			'fast paced',
-			'lonely',
-			'thought provoking',
-			'funny',
-			'sarcastic',
-			'heart warming',
-			'satirical',
-			'scary',
-			'disturbing',
-			'cartoon',
-			'cell shaded',
-			'light hearted',
-			'open world',
-			'cooperative',
-			'multiplayer',
 		],
 
 		templates : [
@@ -1007,16 +1006,17 @@ module.exports = {
 		],
 
 		compare_feel : [
+			'with elements from',
 			'with the gameplay of',
 			'which plays like',
 			'which controls like',
 		],
 
 		templates : [
-			'{{#with mashup}} A game like {{$ game}} mixed with {{$ game}}, but {{$ feature}} {{/with}}',
-			'{{#with mashup}} A cross between {{$ game}} and {{$ game}}, but {{$ feature}} {{/with}}',
-			'{{#with mashup}} A game {{$ compare_look}} {{$ game}}, but {{$ compare_feel}} {{$ game}} {{/with}}',
-			'{{#with mashup}} A game {{$ compare_feel}} {{$ game}}, but {{$ compare_look}} {{$ game}} {{/with}}',
+			'A game like {{$ mashup.game}} mixed with {{$ mashup.game}}, but {{$ mashup.feature}}',
+			'A cross between {{$ mashup.game}} and {{$ mashup.game}}, but {{$ mashup.feature}}',
+			'A game {{$ mashup.compare_look}} {{$ mashup.game}}, but {{$ mashup.compare_feel}} {{$ mashup.game}}',
+			'A game {{$ mashup.compare_feel}} {{$ mashup.game}}, but {{$ mashup.compare_look}} {{$ mashup.game}}',
 		]
 
 	},
@@ -1232,11 +1232,11 @@ module.exports = {
 			'hurtle',
 		],
 		templates : [
-			'{{#with racing}} A racing game where you ride {{$ prefix}} {{$ animal}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}}',
-			'{{#with racing}} A game where you race {{$ prefix}} {{$ type}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}}',
-			'{{#with racing}} A racing game where you {{$ control}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} in {{#with racing}}{{$ prefix}} {{$ type}}{{/with}}',
-			'{{#with racing}} A game where you race {{$ prefix}} {{$ type}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} {{#with racing}}{{$ extra}}{{/with}}',
-			'{{#with racing}} A racing game where you {{$ control}} {{$ around}} {{/with}}{{#with setting}}{{$ description article=true}} {{$ in_location}}{{/with}} in {{#with racing}}{{$ prefix}} {{$ type}} {{$ extra}}{{/with}}',
+			'A racing game where you ride {{$ racing.prefix}} {{$ racing.animal}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
+			'A game where you race {{$ racing.prefix}} {{$ racing.type}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
+			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix}} {{$ racing.type}}',
+			'A game where you race {{$ racing.prefix}} {{$ racing.type}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ racing.extra}}',
+			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix}} {{$ racing.type}} {{$ racing.extra}}',
 		]
 	},
 
