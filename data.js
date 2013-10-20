@@ -5,14 +5,25 @@ module.exports = {
 
 	sim : {
 
+		style : [
+			'realistic',
+			'stylized',
+			'historical',
+			'fast paced',
+			'light hearted',
+			'cooperative',
+			'multiplayer',
+			'',
+		],
+
 		type : [
-			'A simulation game',
-			'A sim game',
-			'A management game',
-			'A god game',
-			'A tycoon game',
-			'A strategy game',
-			'A board game',
+			'simulation game',
+			'sim game',
+			'management game',
+			'god game',
+			'tycoon game',
+			'strategy game',
+			'board game',
 		],
 
 		action : [
@@ -51,6 +62,7 @@ module.exports = {
 			'gold',
 			'crystals',
 			'resources',
+			'tokens',
 			'mana',
 			'water',
 			'power',
@@ -118,6 +130,7 @@ module.exports = {
 		reason : [
 			'until time runs out',
 			'in timed rounds',
+			'in phases',
 			'faster than your opponents',
 			'to make money',
 			'to survive',
@@ -132,10 +145,10 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with sim}} {{$ type}} where you {{$ action}} {{$ resource}} to {{$ control}} {{$ environment article=true}} {{/with}}',
-			'{{#with sim}} {{$ type}} where you {{$ action}} {{$ resource}} and {{$ action}} {{$ resource}} to {{$ control}} {{$ environment article=true}} {{/with}}',
-			'{{#with sim}} {{$ type}} where you {{$ action}} {{$ resource}} {{$ reason}} {{/with}}',
-			'{{#with sim}} {{$ type}} where you {{$ action}} {{$ resource}} and {{$ action}} {{$ resource}} {{$ reason}} {{/with}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} {{$ sim.reason}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action}} {{$ sim.resource}} {{$ sim.reason}}',
 		]
 	},
 
@@ -191,7 +204,8 @@ module.exports = {
 			'butcher',
 			'snuff out',
 			'erase',
-			'main',
+			'maim',
+			'hunt',
 			'battle',
 			'chop up',
 			'explode',
@@ -202,7 +216,6 @@ module.exports = {
 			'melt the insides of',
 			'ransack the homes of',
 			'mercilessly slaughter',
-			'go on a genocidal killing spree against',
 			'devour the souls of',
 		],
 
@@ -310,9 +323,9 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ modifier}} {{/with}}',
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ extra}} {{/with}}',
-			'{{#with action}} {{$ prefix article=true}} {{$ type}} where you {{$ attack}} {{$ enemy_type}} {{$ enemies}} {{$ modifier}} {{$ extra}} {{/with}}',
+			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.modifier}}',
+			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.extra}}',
+			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.modifier}} {{$ action.extra}}',
 		]
 	},
 
@@ -340,7 +353,6 @@ module.exports = {
 			'desert',
 			'sewer',
 			'warehouse',
-			'cavern',
 			'cave system',
 			'war zone',
 		],
@@ -396,9 +408,8 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with setting}} A game set in {{$ description article=true}} {{$ in_location}} {{$ full}} {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
-			'{{#with setting}} A game set on {{$ description article=true}} {{$ on_location}} {{$ full}} {{/with}}{{#with action}}{{$ enemy_type}} {{$ enemies}}{{/with}}',
-			// location in location
+			'A game set in {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
+			'A game set on {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
 		]
 	},
 
@@ -537,11 +548,11 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ effect singular=true}} {{$ extra}} {{/with}}',
-			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} {{$ extra}} {{/with}}',
-			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that is also {{$ type article=true}} {{$ extra}} {{/with}}',
-			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} attached to a {{$ type article=true}} {{$ extra}} {{/with}}',
-			'{{#with weapon}} A game where you {{$ have}} {{$ type article=true}} that {{$ verb}} {{$ projectiles}} that {{$ effect}} {{/with}}',
+			'A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.effect singular=true}} {{$ weapon.extra}}',
+			'A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.verb}} {{$ weapon.projectiles}} {{$ weapon.extra}}',
+			'A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that is also {{$ weapon.type article=true}} {{$ weapon.extra}}',
+			'A game where you {{$ weapon.have}} {{$ weapon.type article=true}} which is attached to {{$ weapon.type article=true}} {{$ weapon.extra}}',
+			'A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.verb}} {{$ weapon.projectiles}} that {{$ weapon.effect}}',
 		]
 	},
 
@@ -626,6 +637,11 @@ module.exports = {
 			'muscular',
 			'skinny',
 			'stocky',
+			'dilligent',
+			'attentive',
+			'sketchy',
+			'shadowy',
+			'mysterious',
 			'friendly',
 			'hostile',
 			'out of place',
@@ -664,13 +680,13 @@ module.exports = {
 			'work',
 			'money',
 			'children',
+			'babies',
 			'old people',
 			'charity',
 			'killing things',
 			'running',
 			'violence',
 			'swimming',
-			'violence',
 			'social situations',
 			'to be alone',
 			'heights',
@@ -680,7 +696,8 @@ module.exports = {
 			'the city',
 			'other people',
 			'robots',
-			'violence',
+			'art',
+			'music',
 			'paperwork',
 			'silence',
 			'daylight',
@@ -690,6 +707,7 @@ module.exports = {
 			'being cold',
 			'hippies',
 			'republicans',
+			'the monarchy',
 		],
 
 		does : [
@@ -703,7 +721,8 @@ module.exports = {
 			'wears vintage clothes',
 			'listens to jazz music',
 			'plays the guitar',
-			'has body image issues',
+			'has body issues',
+			'gets bored easily',
 			'lacks confidence',
 			'watches too much tv',
 			'enjoys life',
@@ -712,17 +731,21 @@ module.exports = {
 			'has anger issues',
 			'struggles with maths',
 			'longs for a quiet life',
+			'wants to retire',
+			'refuses to follow orders',
+			'respects authority',
+			'ignores orders',
 		],
 
 		templates : [
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who hates {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} but hates {{$ thing}} {{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who loves {{$ thing}} and {{$ does}} {{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who hates {{$ thing}} and {{$ does}} {{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who is afraid of {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who has spent years fighting {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
-			'{{#with character}} A game where you {{$ verb}} {{$ description article=true}} {{$ job}} who is fleeing {{/with}}{{#with action}}{{$ enemies}}{{/with}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} but hates {{$ character.thing}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and {{$ character.does}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}} and {{$ character.does}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who is afraid of {{$ action.enemies}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who has spent years fighting {{$ action.enemies}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who is fleeing {{$ action.enemies}}',
 		]
 	},
 
@@ -757,6 +780,7 @@ module.exports = {
 			'open world',
 			'cooperative',
 			'multiplayer',
+			'',
 		],
 
 		type : [
@@ -857,10 +881,10 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with adventure}} {{$ type article=true}} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
-			'{{#with adventure}} {{$ type article=true}} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
-			'{{#with adventure}} {{$ style article=true}} {{$ type }} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
-			'{{#with adventure}} {{$ style article=true}} {{$ type }} where you {{$ incident}} then {{$ act}} to {{$ goal}} {{/with}}',
+			'{{$ adventure.type article=true}} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}',
+			'{{$ adventure.type article=true}} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}',
+			'{{$ adventure.style article=true}} {{$ adventure.type }} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}',
+			'{{$ adventure.style article=true}} {{$ adventure.type }} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}',
 		]
 
 	},
@@ -1096,7 +1120,6 @@ module.exports = {
 			'identity',
 			'self',
 			'existence',
-			'the meaning of life',
 			'love',
 			'jealousy',
 			'loss',
@@ -1114,7 +1137,11 @@ module.exports = {
 			'poverty',
 			'wealth',
 			'control',
-			'self loathing',
+			'drugs',
+			'sex',
+			'addiction',
+			'desire',
+			'loathing',
 			'illness',
 			'humanity',
 			'greed',
@@ -1138,9 +1165,9 @@ module.exports = {
 		],
 
 		templates : [
-			'{{#with indie}} {{$ description article=true}} {{$ type}} with {{$ feature}} and a theme of {{$ issue}} {{/with}}',
-			'{{#with indie}} {{$ description article=true}} {{$ type}} with {{$ feature}}, {{$ feature}} and {{$ restriction}} {{/with}}',
-			'{{#with indie}} {{$ description article=true}} {{$ type}} dealing with issues of {{$x2 issue}} {{/with}}',
+			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a theme of {{$ indie.issue}}',
+			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}}, {{$ indie.feature}} and {{$ indie.restriction}}',
+			'{{$ indie.description article=true}} {{$ indie.type}} dealing with issues of {{$x2 indie.issue}}',
 		]
 	},
 
@@ -1276,6 +1303,9 @@ module.exports = {
 			'draw',
 			'touch',
 			'match',
+			'swap',
+			'control',
+			'manipulate',
 		],
 		subject : [
 			'birds',
@@ -1290,6 +1320,12 @@ module.exports = {
 			'poker chips',
 			'playing cards',
 			'candy',
+			'colors',
+			'trains',
+			'dots',
+			'shapes',
+			'icons',
+			'letters',
 			'monsters',
 			'aeroplanes',
 			'heroes',
@@ -1319,6 +1355,7 @@ module.exports = {
 		],
 		goal : [
 			'to complete levels',
+			'to keep playing',
 			'to get to the end',
 			'to stay alive',
 			'to get points',
@@ -1354,10 +1391,10 @@ module.exports = {
 			'with user generated content',
 		],
 		templates : [
-			'{{#with mobile}} {{$ type article=true}} mobile {{$ genre}} {{$ extra}} where you {{$ input}} {{$ subject}} {{$ goal}} {{/with}}',
-			'{{#with mobile}} {{$ type article=true}} mobile {{$ genre}} {{$ extra}} where you {{$ input}} {{$ subject}} and {{$ action}} {{$ goal}} {{/with}}',
-			'{{#with mobile}} {{$ type article=true}} mobile {{$ genre}} where you {{$ input}} {{$ subject}} {{$ goal}} {{/with}}',
-			'{{#with mobile}} {{$ type article=true}} mobile {{$ genre}} where you {{$ input}} {{$ subject}} and {{$ action}} {{$ goal}} {{/with}}',
+			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
 		]
 	}
 
