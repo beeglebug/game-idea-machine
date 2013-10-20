@@ -310,7 +310,7 @@ module.exports = {
 			'and get cash for each kill',
 			'and you are invincible',
 			'and you are invisible',
-			'and you get betrayed you at the end',
+			'and you get betrayed at the end',
 			'and you can rewind time',
 			'and you can slow down time',
 			'and you can control gravity',
@@ -319,6 +319,7 @@ module.exports = {
 			'but it is all a dream',
 			'but it is all a simulation',
 			'but you die in one hit',
+			'',
 			/* add more here */
 		],
 
@@ -1141,7 +1142,7 @@ module.exports = {
 			'sex',
 			'addiction',
 			'desire',
-			'loathing',
+			'self loathing',
 			'illness',
 			'humanity',
 			'greed',
