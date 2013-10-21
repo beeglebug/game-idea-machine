@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * Game Idea Machine
  * a twitter bot which tweets random game ideas

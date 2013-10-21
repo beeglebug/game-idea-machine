@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var data = require('./data.js');
 
 console.log('checking for duplicates');
