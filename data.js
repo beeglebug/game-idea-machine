@@ -40,7 +40,6 @@ module.exports = {
 			'gather',
 			'look after',
 			'hoard',
-			'multiply',
 			'organize',
 			'contest',
 			'fight over',
@@ -61,6 +60,7 @@ module.exports = {
 			'gems',
 			'gold',
 			'crystals',
+			'coins',
 			'resources',
 			'tokens',
 			'mana',
@@ -161,15 +161,15 @@ module.exports = {
 			'on-rails',
 			'tactical',
 			'cover based',
-			'top down',
 			'squad based',
 			'twin stick',
+			'top down',
+			'first person',
+			'third person',
 			'',
 		],
 
 		type : [
-			'FPS',
-			'first person game',
 			'shooter',
 			'shoot em up',
 			'survival horror game',
@@ -186,6 +186,9 @@ module.exports = {
 			'intimidate',
 			'kick',
 			'punch',
+			'savage',
+			'violate',
+			'target',
 			'assasinate',
 			'argue with',
 			'set fire to',
@@ -227,6 +230,9 @@ module.exports = {
 			'evil',
 			'rabid',
 			'escaped',
+			'angry',
+			'rampaging',
+			'out of control',
 			'hyperactive',
 			'diseased',
 			'rogue',
@@ -238,13 +244,18 @@ module.exports = {
 		enemies : [
 			'nazis',
 			'zombies',
-			'goblins',
 			'dragons',
 			'bugs',
 			'insects',
 			'dinosaurs',
 			'yetis',
 			'orcs',
+			'goblins',
+			'constructs',
+			'AIs',
+			'monkeys',
+			'sharks',
+			'aliens',
 			'rats',
 			'bats',
 			'wasps',
@@ -259,6 +270,9 @@ module.exports = {
 			'ghosts',
 			'vampires',
 			'werewolves',
+			'shapeshifters',
+			'birds',
+			'solders',
 			'vikings',
 			'gangsters',
 			'drug dealers',
@@ -283,7 +297,6 @@ module.exports = {
 			'repeatedly',
 			'from above',
 			'from below',
-			'from behind',
 			'for fame',
 			'for money',
 			'with customizable weapons',
@@ -306,6 +319,7 @@ module.exports = {
 
 		extra : [
 			'and eat the corpses',
+			'and loot the corpses',
 			'and consume the remains',
 			'and get cash for each kill',
 			'and you are invincible',
@@ -315,18 +329,17 @@ module.exports = {
 			'and you can slow down time',
 			'and you can control gravity',
 			'but you cannot jump',
+			'but you cannot heal',
 			'but it turns out you were the bad guy the whole time',
 			'but it is all a dream',
 			'but it is all a simulation',
 			'but you die in one hit',
 			'',
-			/* add more here */
 		],
 
 		templates : [
 			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.modifier}}',
 			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.extra}}',
-			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.modifier}} {{$ action.extra}}',
 		]
 	},
 
@@ -338,6 +351,8 @@ module.exports = {
 			'house',
 			'street',
 			'farm',
+			'factory',
+			'asylum',
 			'car park',
 			'mall',
 			'city',
@@ -348,6 +363,8 @@ module.exports = {
 			'testing facility',
 			'combat arena',
 			'jungle',
+			'desert',
+			'field',
 			'mine',
 			'quarry',
 			'battlefield',
@@ -360,8 +377,10 @@ module.exports = {
 
 		on_location : [
 			'military base',
+			'facility',
 			'submarine',
 			'floating city',
+			'underwater city',
 			'aeroplane',
 			'cruise ship',
 			'train',
@@ -375,6 +394,11 @@ module.exports = {
 		description : [
 			'',
 			'desolate',
+			'dreary',
+			'dangerous',
+			'sinister',
+			'treacherous',
+			'collapsing',
 			'spooky',
 			'abandoned',
 			'flooded',
@@ -408,9 +432,26 @@ module.exports = {
 			'home to',
 		],
 
+		occurs : [
+			'set',
+			'which is set',
+			'which takes place',
+		],
+
+		how : [
+			'explore',
+			'traverse',
+			'navigate',
+			'must get to the end of',
+			'must escape from',
+			'must survive in',
+		],
+
 		templates : [
-			'A game set in {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
-			'A game set on {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
+			'A game {{$ setting.occurs}} in {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
+			'A game {{$ setting.occurs}} on {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
+			'A game where you {{$ setting.how}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
+			'A game where you {{$ setting.how}} {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}',
 		]
 	},
 
@@ -418,7 +459,6 @@ module.exports = {
 
 		have : [
 			'have',
-			'wear',
 			'wield',
 			'carry',
 			'use',
@@ -450,7 +490,6 @@ module.exports = {
 			'helmet',
 			'hat',
 			'backpack',
-			'visor',
 			'ring',
 			'boomerang',
 			'frisbee',
@@ -674,7 +713,6 @@ module.exports = {
 			'fast food',
 			'pizza',
 			'computers',
-			'music',
 			'sports',
 			'cars',
 			'TV',
@@ -738,15 +776,19 @@ module.exports = {
 			'ignores orders',
 		],
 
+		relationship : [
+			'is afraid of',
+			'has spent years fighting',
+			'is fleeing from',
+		],
+
 		templates : [
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} but hates {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and {{$ character.does}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}} and {{$ character.does}}',
-			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who is afraid of {{$ action.enemies}}',
-			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who has spent years fighting {{$ action.enemies}}',
-			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who is fleeing {{$ action.enemies}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who {{$ character.relationship}} {{$ action.enemies}}',
 		]
 	},
 
@@ -1165,10 +1207,16 @@ module.exports = {
 			'16 bit graphics',
 		],
 
+		dealing : [
+			'dealing with issues of',
+			'focussed on issues of',
+			'dealing with themes of',
+		],
+
 		templates : [
 			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a theme of {{$ indie.issue}}',
 			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}}, {{$ indie.feature}} and {{$ indie.restriction}}',
-			'{{$ indie.description article=true}} {{$ indie.type}} dealing with issues of {{$x2 indie.issue}}',
+			'{{$ indie.description article=true}} {{$ indie.type}} {{$ indie.dealing}} {{$x2 indie.issue}}',
 		]
 	},
 
