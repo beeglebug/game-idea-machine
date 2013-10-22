@@ -1635,9 +1635,9 @@ module.exports = {
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and it is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and {{$ boss.gender}} is vulnerable {{$ boss.weakness_when_pre}} {{$ boss.gender}} {{$ boss.weakness_when_post}}',
 
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is succeptable to {{$ boss.weakness_thing}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is succeptable to {{$ boss.weakness_thing}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and is succeptable to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
 		]
 	},
 
