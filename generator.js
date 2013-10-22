@@ -93,6 +93,8 @@ function singularVerb(phrase) {
  */
 function random(arr) {
 
+	if(!arr) { return false; }
+
 	if(!arr.length) {
 		arr = Object.keys(arr);
 	}
