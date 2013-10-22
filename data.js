@@ -1457,12 +1457,15 @@ module.exports = {
 			'one of the bosses',
 			'an early boss'
 		],
-		size : [
+		prefix : [
 			'giant',
 			'huge',
 			'large',
 			'massive',
 			'big',
+			'scary',
+			'fast',
+			'slow',
 		],
 		type : [
 			'ancient',
@@ -1472,11 +1475,8 @@ module.exports = {
 			'demonic',
 			'flying',
 			'drunken',
-			'scary',
-			'terrifying',
 			'poisoned',
 			'rotting',
-			'drugged',
 			'toxic',
 			'armored',
 			'possessed',
@@ -1484,6 +1484,7 @@ module.exports = {
 			'flaming',
 			'diseased',
 			'infected',
+			'camouflaged',
 			'psychotic',
 			'supernatural',
 			'electrified',
@@ -1530,6 +1531,8 @@ module.exports = {
 		action : [
 			'breathes fire',
 			'shoots at you',
+			'uses ranged attacks',
+			'uses close combat',
 			'swipes at you',
 			'swings a weapon at you',
 			'throws things at you',
@@ -1570,7 +1573,7 @@ module.exports = {
 			'wind',
 			'special moves',
 			'falling damage',
-			'environment damage',
+			'environmental damage',
 			'persuasion',
 			'bribery'
 		],
@@ -1586,9 +1589,8 @@ module.exports = {
 			'chest',
 			'knees',
 			'glowing tattoo',
-			'weapons',
+			'weapon',
 			'armour',
-			'blind spot',
 		],
 		weakness_inanimate : [
 			'underside',
@@ -1618,18 +1620,26 @@ module.exports = {
 			'powers up',
 			'moves',
 		],
+		gender : [
+			'he',
+			'she',
+		],
+		gender_possessive : [
+			'his',
+			'her',
+		],
 		templates : [
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_animate}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_inanimate}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and his weak spot is his {{$ boss.weakness_animate}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_animate}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_inanimate}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and has a weak spot on {{$ boss.gender_possessive}} {{$ boss.weakness_animate}}',
 
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and it is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and it is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and he is vulnerable {{$ boss.weakness_when_pre}} he {{$ boss.weakness_when_post}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and is vulnerable {{$ boss.weakness_when_pre}} {{$ boss.gender}} {{$ boss.weakness_when_post}}',
 
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
+			'A game where {{$ boss.when}} is {{$ boss.prefix article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
 		]
 	},
 
