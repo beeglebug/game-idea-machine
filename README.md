@@ -10,11 +10,12 @@ Will reply with an idea if you tweet "@gameideamachine [command]", where [comman
 * __action__ - an action/shooter type game
 * __adventure__ - an RPG/adventure game
 * __indie__ - an arty/indie game
+* __racing__ - a racing game
 * __mashup__ - a suggestion referencing existing games
 * __weapon__ - an idea centered around a weapon of some sort
 * __setting__ - an idea focused on the setting
 * __character__ - a game based on a particular character
-* __racing__ - a racing game
+* __boss__ - an idea for a boss encounter
 
 Comments and suggestions should be tweeted to [@beeglebug](http://twitter.com/beeglebug)
 
