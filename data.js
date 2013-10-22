@@ -1618,22 +1618,14 @@ module.exports = {
 			'powers up',
 			'moves',
 		],
-		gender : [
-			'he',
-			'she',
-		],
-		gender_possessive : [
-			'his',
-			'her',
-		],
 		templates : [
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_animate}}',
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and its weak spot is its {{$ boss.weakness_inanimate}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and his weak spot is {{$ boss.gender_possessive }} {{$ boss.weakness_animate}}',
+			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and his weak spot is his {{$ boss.weakness_animate}}',
 
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and it is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and it is vulnerable {{$ boss.weakness_when_pre}} it {{$ boss.weakness_when_post}}',
-			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and {{$ boss.gender}} is vulnerable {{$ boss.weakness_when_pre}} {{$ boss.gender}} {{$ boss.weakness_when_post}}',
+			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_who}} who {{$ boss.action}} and he is vulnerable {{$ boss.weakness_when_pre}} he {{$ boss.weakness_when_post}}',
 
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_animate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
 			'A game where {{$ boss.when}} is {{$ boss.size article=true}} {{$ boss.type}} {{$ boss.creature_which_inanimate}} which {{$ boss.action}} and is susceptible to {{$ boss.weakness_thing}}',
