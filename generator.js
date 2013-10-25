@@ -27,6 +27,11 @@ Handlebars.registerHelper('$', function(data, options) {
 		if(options.hash.capital) {
 			item = capitaliseFirstLetter(item);
 		}
+		if(options.hash.skip) {
+			if(Math.random() * 100 > options.hash.skip) {
+				return '';
+			}
+		}
 	}
 
 	return item;
