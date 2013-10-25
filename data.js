@@ -393,7 +393,6 @@ module.exports = {
 		],
 
 		description : [
-			'',
 			'desolate',
 			'dreary',
 			'dangerous',
@@ -919,6 +918,8 @@ module.exports = {
 			'gain fabulous wealth',
 			'uncover the secrets of your past',
 			'save your family',
+			'save a loved one',
+			'rescue a loved one',
 			'take down a corrupt government',
 			'become amazingly wealthy',
 			'escape your past',
@@ -1290,7 +1291,6 @@ module.exports = {
 			'against the clock',
 			'against your best time',
 			'against your friends',
-			'in an open world'
 		],
 		around : [
 			'around',
@@ -1347,15 +1347,16 @@ module.exports = {
 			'slide',
 			'fling',
 			'pinch',
-			'stroke',
-			'swipe',
 			'slice',
 			'draw',
 			'touch',
-			'match',
 			'swap',
 			'control',
 			'manipulate',
+			'arrange',
+			'match',
+			'collect',
+			'trade',
 		],
 		subject : [
 			'birds',
@@ -1441,10 +1442,15 @@ module.exports = {
 			'with user generated content',
 		],
 		templates : [
-			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
-			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
-			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
-			'{{$ mobile.type article=true}} mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile game {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile game {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile game where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'{{$ mobile.type article=true}} mobile game where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
+
+			'A mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'A mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
+			'A mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}',
+			'A mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}',
 		]
 	},
 
