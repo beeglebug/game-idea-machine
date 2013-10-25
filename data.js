@@ -33,7 +33,6 @@ module.exports = {
 			'muster',
 			'trade',
 			'farm',
-			'buy and sell',
 			'deal in',
 			'harvest',
 			'collect',
@@ -146,9 +145,9 @@ module.exports = {
 
 		templates : [
 			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}',
-			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action skip=50}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}',
 			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} {{$ sim.reason}}',
-			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action}} {{$ sim.resource}} {{$ sim.reason}}',
+			'{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action skip=50}} {{$ sim.resource}} {{$ sim.reason}}',
 		]
 	},
 
@@ -233,13 +232,13 @@ module.exports = {
 			'angry',
 			'rampaging',
 			'out of control',
-			'hyperactive',
+			'frenzied',
 			'diseased',
 			'infected',
 			'rogue',
 			'zombie',
 			'possessed',
-			'',
+			'sinister',
 		],
 
 		enemies : [
@@ -315,7 +314,7 @@ module.exports = {
 			'from the shadows',
 			'with your bare hands',
 			'with magical powers',
-			'with an experimental physics manipulation weapon',
+			'with an experimental weapon',
 			'using vehicles'
 		],
 
@@ -340,8 +339,8 @@ module.exports = {
 		],
 
 		templates : [
-			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.modifier}}',
-			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type}} {{$ action.enemies}} {{$ action.extra}}',
+			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type skip=50}} {{$ action.enemies}} {{$ action.modifier}}',
+			'{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type skip=50}} {{$ action.enemies}} {{$ action.extra}}',
 		]
 	},
 
@@ -786,6 +785,7 @@ module.exports = {
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} but hates {{$ character.thing}}',
+			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and hates {{$ character.thing}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and {{$ character.does}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}} and {{$ character.does}}',
 			'A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who {{$ character.relationship}} {{$ action.enemies}}',
@@ -1106,6 +1106,8 @@ module.exports = {
 			'confusing',
 			'bug filled',
 			'heavily hyped',
+			'fan favourite',
+			'community favourite',
 			'over hyped',
 			'misunderstood',
 			'post modern',
@@ -1217,6 +1219,7 @@ module.exports = {
 
 		templates : [
 			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a theme of {{$ indie.issue}}',
+			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a focus on {{$ indie.issue}}',
 			'{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}}, {{$ indie.feature}} and {{$ indie.restriction}}',
 			'{{$ indie.description article=true}} {{$ indie.type}} {{$ indie.dealing}} {{$x2 indie.issue}}',
 		]
@@ -1240,22 +1243,17 @@ module.exports = {
 			'sluggish',
 		],
 
-		type : [
+		type_in : [
 			'rally cars',
 			'sports cars',
 			'F1 cars',
 			'karts',
 			'SUVs',
 			'trucks',
-			'motorbikes',
-			'motocross bikes',
-			'mountain bikes',
-			'tricycles',
 			'hovercraft',
 			'row boats',
 			'boats',
 			'canoes',
-			'jetskis',
 			'planes',
 			'rockets',
 			'shopping carts',
@@ -1264,18 +1262,21 @@ module.exports = {
 			'flying saucers',
 			'helicopters',
 			'hang gliders',
-			'jet packs',
-			'unicycles',
-			'segways',
 		],
 
-		animal : [
+		type_on : [
+			'unicycles',
+			'segways',
 			'horses',
+			'jetskis',
 			'camels',
 			'elephants',
 			'dolphins',
 			'eagles',
-			'mice',
+			'motorbikes',
+			'motocross bikes',
+			'mountain bikes',
+			'tricycles',
 		],
 
 		extra : [
@@ -1309,11 +1310,12 @@ module.exports = {
 			'hurtle',
 		],
 		templates : [
-			'A racing game where you ride {{$ racing.prefix}} {{$ racing.animal}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
-			'A game where you race {{$ racing.prefix}} {{$ racing.type}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
-			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix}} {{$ racing.type}}',
-			'A game where you race {{$ racing.prefix}} {{$ racing.type}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ racing.extra}}',
-			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix}} {{$ racing.type}} {{$ racing.extra}}',
+			'A racing game where you ride {{$ racing.prefix skip=20}} {{$ racing.type_on}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
+			'A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_on}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
+			'A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}',
+			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix skip=20}} {{$ racing.type_in}}',
+			'A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ racing.extra}}',
+			'A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.extra}}',
 		]
 	},
 
@@ -1569,6 +1571,7 @@ module.exports = {
 			'has three lives',
 			'has loads of health',
 			'kills you in one hit',
+			/* needs more */
 		],
 		weakness_thing : [
 			'fire',
@@ -1580,8 +1583,8 @@ module.exports = {
 			'special moves',
 			'falling damage',
 			'environmental damage',
-			'persuasion',
-			'bribery'
+			'speed',
+			'stealth',
 		],
 		weakness_animate : [
 			'belly',
