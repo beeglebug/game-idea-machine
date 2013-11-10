@@ -80,7 +80,7 @@ function monitor() {
 		// ignore everything other than "@gameidemachine command" (for now)
 		if(message.indexOf('@gameideamachine') !== 0) { return; }
 
-		var command = message.replace('@gameideamachine','').trim().toLowerCase();
+		var command = message.replace('@gameideamachine','').trim().toLowerCase().split(' ')[0];
 
 		if(command === 'idea') {
 			reply(tweet, generator.generateSafe(null, tweet.user.screen_name));
