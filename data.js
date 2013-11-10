@@ -273,7 +273,7 @@ module.exports = {
 			'werewolves',
 			'shapeshifters',
 			'birds',
-			'solders',
+			'soldiers',
 			'vikings',
 			'gangsters',
 			'drug dealers',
