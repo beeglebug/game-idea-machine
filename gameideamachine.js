@@ -68,17 +68,21 @@ function handleArguments() {
  */
 function monitor() {
 
-	var stream = Twitter.stream('user');
+	var stream = Twitter.stream('user', { with:'user'});
 
 	stream.on('tweet', function (tweet) {
-
-		var message = tweet.text;
 
 		// ignore own tweets
 		if(tweet.user.screen_name == 'gameideamachine') { return; }
 
+		var message = tweet.text;
+		util.log('tweet received from ' + tweet.user.screen_name);
+
 		// ignore everything other than "@gameidemachine command" (for now)
-		if(message.indexOf('@gameideamachine') !== 0) { return; }
+		if(message.indexOf('@gameideamachine') !== 0) {
+			util.log('not aimed at me'); 
+			return;
+		}
 
 		var command = message.replace('@gameideamachine','').trim().toLowerCase();
 
