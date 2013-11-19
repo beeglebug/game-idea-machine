@@ -84,7 +84,7 @@ function monitor() {
 			return;
 		}
 
-		var command = message.replace('@gameideamachine','').trim().toLowerCase();
+		var command = message.replace('@gameideamachine','').trim().toLowerCase().split(' ')[0];
 
 		if(command === 'idea') {
 			reply(tweet, generator.generateSafe(null, tweet.user.screen_name));
