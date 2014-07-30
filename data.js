@@ -254,7 +254,7 @@ module.exports = {
             'poke fun at',
             'evade',
             'hide from',
-            'observer',
+            'observe',
             'spy on',
             'infiltrate',
 			'melt the insides of',
