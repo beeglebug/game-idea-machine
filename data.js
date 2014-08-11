@@ -21,6 +21,7 @@ module.exports = {
 			'cooperative',
 			'multiplayer',
 			'massively multiplayer',
+			'virtual reality',
 			'',
 		],
 
@@ -60,6 +61,7 @@ module.exports = {
 			'store',
 			'hide',
 			'tend',
+			'grow',
 		],
 
 		resource : [
@@ -97,10 +99,15 @@ module.exports = {
 			'stocks',
 			'ingredients',
 			'ore',
+			'drugs',
 			'metals',
 			'fuel',
 			'souls',
+			'experiences',
 			'monsters',
+			'herbs',
+			'spices',
+			'magic',
 		],
 
 		control : [
@@ -118,6 +125,7 @@ module.exports = {
 			'supervise',
 			'govern',
 			'dominate',
+			'administrate',
 		],
 
 		environment : [
@@ -151,6 +159,7 @@ module.exports = {
 			'country',
 			'planet',
 			'galaxy',
+			'restaurant',
 		],
 
 		reason : [
@@ -197,6 +206,7 @@ module.exports = {
 			'top down',
 			'first person',
 			'third person',
+			'virtual reality',
 			'',
 		],
 
@@ -250,6 +260,10 @@ module.exports = {
 			'beat down',
 			'destroy',
 			'take down',
+			'mince',
+			'masticate',
+			'disfigure',
+			'maul',
 			'massacre',
 			'poke fun at',
 			'evade',
@@ -289,6 +303,7 @@ module.exports = {
 			'zombie',
 			'possessed',
 			'sinister',
+			'evolved',
 		],
 
 		enemies : [
@@ -351,7 +366,8 @@ module.exports = {
 			'villagers',
 			'insurgents',
 			'hillbillies',
-			'devil worshippers'
+			'devil worshippers',
+			'reporters',
 		],
 
 		modifier : [
@@ -362,6 +378,7 @@ module.exports = {
 			'from behind',
 			'for fame',
 			'for money',
+			'for fun',
 			'with customizable weapons',
 			'using the power of your mind',
 			'with shurikens',
@@ -383,7 +400,9 @@ module.exports = {
 			'with magical powers',
 			'using stealth',
 			'with an experimental weapon',
-			'using vehicles'
+			'using vehicles',
+			'using lasers',
+			'using only a ballpoint pen',
 		],
 
 		extra : [
@@ -941,6 +960,7 @@ module.exports = {
 			'open world',
 			'cooperative',
 			'multiplayer',
+			'virtual reality',
 			'',
 		],
 
@@ -1267,6 +1287,7 @@ module.exports = {
 			'hipster',
 			'cutting edge',
 			'bleeding edge',
+			'virtual reality',
 		],
 
 		type : [
