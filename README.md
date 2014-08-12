@@ -30,4 +30,9 @@ Comments and suggestions should be tweeted to [@beeglebug](http://twitter.com/be
 
 The best way to contribute is to add more words and phrases to the [data set](https://github.com/beeglebug/game-idea-machine/blob/master/data.js), which will allow the bot to generate a wider variety of ideas.
 
-By far the easiest way to do this is using github's online editor, which allows you to make changes and submit a pull request from your browser.
+## Thanks
+
+* Thanks to @xanderlewis for adding more data
+* Thanks to @agjmills for fixing the code indentation
+* Thanks to @lordy81 for adding support for multiple tweets in a row
+* Thanks to @aschearer for fixing a typo
