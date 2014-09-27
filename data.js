@@ -61,7 +61,6 @@ module.exports = {
 			'store',
 			'hide',
 			'tend',
-			'grow',
 		],
 
 		resource : [
