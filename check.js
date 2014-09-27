@@ -22,7 +22,6 @@ function findDuplicates(arr) {
 
   for (var i=0;i<len;i++) {
     var item = arr[i];
-    var count = counts[item];
     counts[item] = counts[item] >= 1 ? counts[item] + 1 : 1;
   }
 
