@@ -367,6 +367,16 @@ module.exports = {
 			'hillbillies',
 			'devil worshippers',
 			'reporters',
+			'bugbears',
+			'satyrs',
+			'centaurs',
+			'ogres',
+			'immortals',
+			'sirens',
+			'basilisks',
+			'evil spirits',
+			'undead',
+			'hydras',
 		],
 
 		modifier : [
