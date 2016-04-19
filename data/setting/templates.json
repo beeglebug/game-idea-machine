@@ -1,0 +1,6 @@
+[
+  "A game {{$ setting.occurs}} in {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}",
+  "A game {{$ setting.occurs}} on {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}",
+  "A game where you {{$ setting.how}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}",
+  "A game where you {{$ setting.how}} {{$ setting.description article=true}} {{$ setting.on_location}} {{$ setting.full}} {{$ action.enemy_type}} {{$ action.enemies}}"
+]

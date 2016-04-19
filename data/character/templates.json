@@ -1,0 +1,9 @@
+[
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} but hates {{$ character.thing}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and hates {{$ character.thing}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who loves {{$ character.thing}} and {{$ character.does}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who hates {{$ character.thing}} and {{$ character.does}}",
+  "A game where you {{$ character.verb}} {{$ character.description article=true}} {{$ character.job}} who {{$ character.relationship}} {{$ action.enemies}}"
+]

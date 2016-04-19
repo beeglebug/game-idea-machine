@@ -4,7 +4,8 @@
  */
 var Handlebars = require('handlebars');
 var getArticle = require('indefinite-article');
-var data = require('./data.js');
+var requireDirectory = require('require-directory');
+var data = requireDirectory(module, './data');
 
 var allTemplates = [];
 for(type in data) {

@@ -1,0 +1,10 @@
+[
+  "{{$ mobile.type article=true}} mobile game {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}",
+  "{{$ mobile.type article=true}} mobile game {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}",
+  "{{$ mobile.type article=true}} mobile game where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}",
+  "{{$ mobile.type article=true}} mobile game where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}",
+  "A mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}",
+  "A mobile {{$ mobile.genre}} {{$ mobile.extra}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}",
+  "A mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} {{$ mobile.goal}}",
+  "A mobile {{$ mobile.genre}} where you {{$ mobile.input}} {{$ mobile.subject}} and {{$ mobile.action}} {{$ mobile.goal}}"
+]

@@ -1,0 +1,6 @@
+[
+  "{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a theme of {{$ indie.issue}}",
+  "{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}} and a focus on {{$ indie.issue}}",
+  "{{$ indie.description article=true}} {{$ indie.type}} with {{$ indie.feature}}, {{$ indie.feature}} and {{$ indie.restriction}}",
+  "{{$ indie.description article=true}} {{$ indie.type}} {{$ indie.dealing}} {{$x2 indie.issue}}"
+]

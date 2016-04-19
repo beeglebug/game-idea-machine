@@ -1,0 +1,7 @@
+[
+  "A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.effect singular=true}} {{$ weapon.extra}}",
+  "A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.verb}} {{$ weapon.projectiles}} {{$ weapon.extra}}",
+  "A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that is also {{$ weapon.type article=true}} {{$ weapon.extra}}",
+  "A game where you {{$ weapon.have}} {{$ weapon.type article=true}} which is attached to {{$ weapon.type article=true}} {{$ weapon.extra}}",
+  "A game where you {{$ weapon.have}} {{$ weapon.type article=true}} that {{$ weapon.verb}} {{$ weapon.projectiles}} that {{$ weapon.effect}}"
+]

@@ -1,0 +1,4 @@
+[
+  "{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type skip=50}} {{$ action.enemies}} {{$ action.modifier}}",
+  "{{$ action.prefix article=true}} {{$ action.type}} where you {{$ action.attack}} {{$ action.enemy_type skip=50}} {{$ action.enemies}} {{$ action.extra skip=50}}"
+]

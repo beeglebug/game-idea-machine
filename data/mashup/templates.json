@@ -1,0 +1,6 @@
+[
+  "A game like {{$ mashup.game}} mixed with {{$ mashup.game}}, but {{$ mashup.feature}}",
+  "A cross between {{$ mashup.game}} and {{$ mashup.game}}, but {{$ mashup.feature}}",
+  "A game {{$ mashup.compare_look}} {{$ mashup.game}}, but {{$ mashup.compare_feel}} {{$ mashup.game}}",
+  "A game {{$ mashup.compare_feel}} {{$ mashup.game}}, but {{$ mashup.compare_look}} {{$ mashup.game}}"
+]

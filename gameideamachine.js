@@ -10,10 +10,9 @@ var fs  = require('fs');
 var path = require('path');
 var util = require('util');
 var generator = require('./generator.js');
-var secrets = require('./secrets.js');
-var data = require('./data.js');
+var requireDirectory = require('require-directory');
+var data = requireDirectory(module, './data');
 
-var Twitter = new Twit(secrets);
 
 handleArguments();
 
@@ -23,7 +22,8 @@ handleArguments();
 function handleArguments() {
 
 	var count = 1,
-		type = null;
+		type = null,
+    secrets, twitter;
 
 	switch(process.argv[2]) {
 
@@ -49,14 +49,16 @@ function handleArguments() {
 
 		// send a tweet
 		case 'tweet':
-
-			tweet();
+      secrets = require('./secrets.js');
+      twitter = new Twit(secrets);
+			tweet(twitter);
 			break;
 
 		// listen for commands
 		case 'monitor':
-
-			monitor();
+      secrets = require('./secrets.js');
+      twitter = new Twit(secrets);
+			monitor(twitter);
 			break;
 
 	}
@@ -66,9 +68,9 @@ function handleArguments() {
  * watch the gameideamachine user stream
  * look for tweets at it
  */
-function monitor() {
+function monitor(twitter) {
 
-	var stream = Twitter.stream('user', { with:'user'});
+	var stream = twitter.stream('user', { with:'user'});
 
 	stream.on('tweet', function (tweet) {
 
@@ -87,9 +89,9 @@ function monitor() {
 		var command = message.replace('@gameideamachine','').trim().toLowerCase().split(' ')[0];
 
 		if(command === 'idea') {
-			reply(tweet, generator.generateSafe(null, tweet.user.screen_name));
+			reply(twitter, tweet, generator.generateSafe(null, tweet.user.screen_name));
 		} else if(data[command]) {
-			reply(tweet, generator.generateSafe(command, tweet.user.screen_name));
+			reply(twitter, tweet, generator.generateSafe(command, tweet.user.screen_name));
 		} else {
 			util.log('unknown command ' + String(command) );
 			return;
@@ -98,11 +100,11 @@ function monitor() {
 	});
 }
 
-function reply(tweet, message) {
+function reply(twitter, tweet, message) {
 
 	var status = '@' + tweet.user.screen_name + ' ' + message;
 
-	Twitter.post('statuses/update', {
+	twitter.post('statuses/update', {
 		status: status,
 		in_reply_to_status_id : tweet.id_str
 	}, function(err, reply) {
@@ -111,7 +113,7 @@ function reply(tweet, message) {
 	});
 }
 
-function tweet() {
+function tweet(twitter) {
 
 	var file = path.resolve(__dirname, 'queue.txt');
 
@@ -124,7 +126,7 @@ function tweet() {
 			status = generator.generateSafe();
 		}
 
-		Twitter.post('statuses/update', { status: status }, function(err, reply) {
+		twitter.post('statuses/update', { status: status }, function(err, reply) {
 
 			// drop any empty elements
 			queue = queue.filter(function(e){ return e; });

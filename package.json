@@ -1,10 +1,13 @@
 {
-	"name": "gameideamachine",
-	"description": "A twitter bot for posting game ideas",
-	"repository" : {},
-	"dependencies" : {
-		"handlebars" : "",
-		"indefinite-article" : "",
-		"twit" : ""
-	}
+  "name": "gameideamachine",
+  "description": "A twitter bot for posting game ideas",
+  "repository": {},
+  "dependencies": {
+    "handlebars": "",
+    "indefinite-article": "",
+    "twit": ""
+  },
+  "devDependencies": {
+    "require-directory": "^2.1.1"
+  }
 }

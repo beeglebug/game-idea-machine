@@ -1,0 +1,8 @@
+[
+  "A racing game where you ride {{$ racing.prefix skip=20}} {{$ racing.type_on}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}",
+  "A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_on}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}",
+  "A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}}",
+  "A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix skip=20}} {{$ racing.type_in}}",
+  "A game where you race {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} {{$ racing.extra}}",
+  "A racing game where you {{$ racing.control}} {{$ racing.around}} {{$ setting.description article=true}} {{$ setting.in_location}} in {{$ racing.prefix skip=20}} {{$ racing.type_in}} {{$ racing.extra}}"
+]

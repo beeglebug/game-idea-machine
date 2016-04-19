@@ -1,0 +1,6 @@
+[
+  "{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}",
+  "{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action skip=50}} {{$ sim.resource}} to {{$ sim.control}} {{$ sim.environment article=true}}",
+  "{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} {{$ sim.reason}}",
+  "{{$ sim.style article=true}} {{$ sim.type}} where you {{$ sim.action}} {{$ sim.resource}} and {{$ sim.action skip=50}} {{$ sim.resource}} {{$ sim.reason}}"
+]

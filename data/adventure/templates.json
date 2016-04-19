@@ -1,0 +1,6 @@
+[
+  "{{$ adventure.type article=true}} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}",
+  "{{$ adventure.type article=true}} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}",
+  "{{$ adventure.style article=true}} {{$ adventure.type }} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}",
+  "{{$ adventure.style article=true}} {{$ adventure.type }} where you {{$ adventure.incident}} then {{$ adventure.act}} to {{$ adventure.goal}}"
+]
