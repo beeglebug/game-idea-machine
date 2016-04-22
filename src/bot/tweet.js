@@ -1,10 +1,10 @@
 var log = require('../util/log.js');
 
-module.exports = function(twitter) {
+module.exports = function(twitter, data, compiler) {
 
-  var status = generator.generateSafe();
+  var idea = generateSafe(null, null, data, compiler);
 
-  twitter.post('statuses/update', { status: status }, function(err) {
+  twitter.post('statuses/update', { status: idea }, function(err) {
     if(err) { log(err); }
     else { log('scheduled tweet sent'); }
   });

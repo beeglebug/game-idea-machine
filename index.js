@@ -2,7 +2,7 @@
 
 var handlebars = require('handlebars');
 var requireDirectory = require('require-directory');
-var generateSafe = require('./src/generateSafe.js');
+var generateSafe = require('./src/generation/generateSafe.js');
 var Twit = require('twit');
 var secrets = require('./secrets.js');
 var tweet = require('./src/bot/tweet.js');
@@ -43,12 +43,12 @@ switch(process.argv[2]) {
   // send a tweet
   case 'tweet':
     twitter = new Twit(secrets);
-    tweet(twitter);
+    tweet(twitter, data, handlebars);
     break;
 
   // listen for commands
   case 'monitor':
     twitter = new Twit(secrets);
-    monitor(twitter);
+    monitor(twitter, data, handlebars);
     break;
 }

@@ -1,12 +1,12 @@
 var log = require('../util/log.js');
-var generator = require('../../index.js');
 var reply = require('./reply.js');
+var generateSafe = require('../generation/generateSafe.js');
 
 /**
  * watch the gameideamachine user stream
- * look for tweets at it
+ * look for tweets aimed at the bot
  */
-module.exports = function(twitter) {
+module.exports = function(twitter, data, compiler) {
 
   var stream = twitter.stream('user', { with : 'user' });
 
@@ -24,15 +24,17 @@ module.exports = function(twitter) {
       return;
     }
 
-    var command = message.replace('@gameideamachine','').trim().toLowerCase().split(' ')[0];
+    var command = message.replace('@gameideamachine','').trim().toLowerCase().split(' ')[0],
+      idea;
 
     if(command === 'idea') {
-      reply(twitter, tweet, generator.generateSafe(null, tweet.user.screen_name));
+      idea = generateSafe(null, tweet.user.screen_name, data, compiler);
+      reply(twitter, tweet, idea);
     } else if(data[command]) {
-      reply(twitter, tweet, generator.generateSafe(command, tweet.user.screen_name));
+      idea = generateSafe(command, tweet.user.screen_name, data, compiler);
+      reply(twitter, tweet, idea);
     } else {
       log('unknown command ' + String(command) );
-      return;
     }
   });
 };
