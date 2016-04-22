@@ -28,7 +28,7 @@ Comments and suggestions should be tweeted to [@beeglebug](http://twitter.com/be
 
 ## Contributing
 
-The best way to contribute is to add more words and phrases to the [data set](https://github.com/beeglebug/game-idea-machine/blob/master/data.js), which will allow the bot to generate a wider variety of ideas.
+The best way to contribute is to add more words and phrases to the [data set](https://github.com/beeglebug/game-idea-machine/blob/master/data), which will allow the bot to generate a wider variety of ideas.
 
 ## Thanks
 
