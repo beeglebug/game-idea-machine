@@ -1,5 +1,5 @@
-var upperCaseFirst = require('./util/upperCaseFirst.js');
-var randomItem = require('./util/randomItem.js');
+var upperCaseFirst = require('../util/upperCaseFirst.js');
+var randomItem = require('../util/randomItem.js');
 
 /**
  * generate a random game idea
