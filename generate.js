@@ -1,8 +1,6 @@
 #!/usr/bin/env node
 
-var generateSafe = require('./src/generation/generateSafe.js');
-var handlebars = require('./src/handlebars.js');
-var data = require('require-directory')(module, './data');
+var generator = require('./src/generator.js');
 var argv = require('yargs')
   .default('type', 'idea')
   .default('count', 1)
@@ -11,6 +9,6 @@ var argv = require('yargs')
 var idea;
 
 while(argv.count--) {
-  idea = generateSafe(argv.type, null, data, handlebars);
+  idea = generator.generate(argv.type);
   console.log(idea);
 }

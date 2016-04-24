@@ -1,7 +1,5 @@
 var log = require('./src/util/log.js');
-var data = require('require-directory')(module, './data');
-var handlebars = require('./src/handlebars.js');
-var generateSafe = require('./src/generation/generateSafe.js');
+var generator = require('./src/generator.js');
 var Twit = require('twit');
 var secrets = require('./secrets.js');
 
@@ -38,7 +36,7 @@ stream.on('tweet', function (tweet) {
     return;
   }
 
-  var idea = generateSafe(command, handle, data, handlebars);
+  var idea = generator.generateSafe(command, handle);
   var status = '@' + handle + ' ' + idea;
 
   twitter.post('statuses/update', {

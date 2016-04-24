@@ -1,14 +1,12 @@
 #!/usr/bin/env node
 
 var log = require('./src/util/log.js');
-var generateSafe = require('./src/generation/generateSafe.js');
-var handlebars = require('./src/handlebars.js');
-var data = require('require-directory')(module, './data');
+var generator = require('./src/generator.js');
 var Twit = require('twit');
 var secrets = require('./secrets.js');
 
 var twitter = new Twit(secrets);
-var idea = generateSafe(null, null, data, handlebars);
+var idea = generator.generateSafe();
 
 twitter.post('statuses/update', { status: idea }, function(err) {
   if(err) {
