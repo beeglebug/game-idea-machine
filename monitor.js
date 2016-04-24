@@ -31,7 +31,7 @@ stream.on('tweet', function (tweet) {
     .toLowerCase()
     .split(' ')[0];
 
-  if(command !== 'idea' && !data[command]) {
+  if(command !== 'idea' && !generator.isValidType(command)) {
     log('unknown command ' + String(command));
     return;
   }

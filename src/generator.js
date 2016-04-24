@@ -13,7 +13,7 @@ module.exports = {
 
   generate : function(type) {
 
-    if (!type || !this.templates[type]) {
+    if (!this.isValidType(type)) {
       type = randomItem(this.templates);
     }
 
@@ -44,5 +44,10 @@ module.exports = {
     }
 
     return status;
+  },
+
+  isValidType: function(type) {
+    return (type && this.templates[type]);
   }
+
 };
