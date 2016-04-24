@@ -3,9 +3,16 @@
   "description": "A twitter bot for posting game ideas",
   "repository": {},
   "dependencies": {
-    "require-directory": "^2.1.1",
     "handlebars": "",
     "indefinite-article": "",
+    "require-directory": "^2.1.1",
     "twit": ""
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "test": "mocha test/index.js"
   }
 }
