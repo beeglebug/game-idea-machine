@@ -1,4 +1,4 @@
-# Game Idea Machine
+# Game Idea Machine [![Build Status][travis-image]][travis-url]
 A twitter bot which tweets randomly generated ideas for games.
 
 Occasionally funny, often bizarre, hopefully useful.
@@ -36,3 +36,6 @@ The best way to contribute is to add more words and phrases to the [data set](ht
 * Thanks to @agjmills for fixing the code indentation
 * Thanks to @lordy81 for adding support for multiple tweets in a row
 * Thanks to @aschearer for fixing a typo
+
+[travis-url]: http://travis-ci.org/beeglebug/game-idea-machine
+[travis-image]: http://img.shields.io/travis/beeglebug/game-idea-machine/master.svg?style=flat
